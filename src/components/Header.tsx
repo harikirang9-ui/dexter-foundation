@@ -10,7 +10,7 @@ export default function Header() {
   return (
     <header className="flex items-center justify-between px-[150px] py-4 bg-white">
       <Link href="/" className="flex items-center gap-3">
-        <Image src={logoUrl} alt="Dexter Foundation" width={60} height={50} />
+        <Image src={logoUrl} alt="Dexter Foundation" width={120} height={100} />
       </Link>
       <nav className="flex items-center gap-10">
         <Link href="#" className="text-[18px] text-black font-medium hover:text-primary">

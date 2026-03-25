@@ -11,7 +11,7 @@ export default function Footer() {
         <div className="flex justify-between">
           {/* Logo */}
           <div className="flex items-start gap-3">
-            <Image src={logoUrl} alt="Dexter Foundation" width={87} height={72} />
+            <Image src={logoUrl} alt="Dexter Foundation" width={140} height={116} />
           </div>
 
           {/* Contact Us */}
