@@ -2,9 +2,9 @@ import Image from "next/image";
 import type { SelectedStudent } from "@/data/coaching-data";
 
 const confetti =
-  "https://www.figma.com/api/mcp/asset/03ca2ca4-640b-490b-8d91-eb6023377858";
+  "https://ey5228l95bqwogyb.public.blob.vercel-storage.com/Barefoot%20English%20Training/confetti.png";
 const bgPattern =
-  "https://www.figma.com/api/mcp/asset/29c329d1-43b5-4d8e-9429-d208ae2c1371";
+  "https://ey5228l95bqwogyb.public.blob.vercel-storage.com/Barefoot%20English%20Training/bgpattern.png";
 
 interface SelectedStudentsProps {
   students?: SelectedStudent[];
