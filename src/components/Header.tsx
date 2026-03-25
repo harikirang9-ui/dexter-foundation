@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -7,8 +8,27 @@ const logoUrl =
   "https://ey5228l95bqwogyb.public.blob.vercel-storage.com/homepage/df_logo.png";
 
 export default function Header() {
+  const headerRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    function updateHeight() {
+      if (headerRef.current) {
+        document.documentElement.style.setProperty(
+          "--header-height",
+          `${headerRef.current.offsetHeight}px`
+        );
+      }
+    }
+    updateHeight();
+    window.addEventListener("resize", updateHeight);
+    return () => window.removeEventListener("resize", updateHeight);
+  }, []);
+
   return (
-    <header className="flex items-center justify-between px-[150px] py-4 bg-white">
+    <header
+      ref={headerRef}
+      className="sticky top-0 z-50 flex items-center justify-between px-[150px] py-4 bg-white shadow-sm"
+    >
       <Link href="/" className="flex items-center gap-3">
         <Image src={logoUrl} alt="Dexter Foundation" width={120} height={100} />
       </Link>
