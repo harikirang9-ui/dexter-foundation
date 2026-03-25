@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const logoUrl =
-  "https://www.figma.com/api/mcp/asset/38e73965-47e1-447a-9883-ee79f47420e5";
+  "https://ey5228l95bqwogyb.public.blob.vercel-storage.com/homepage/df_logo.png";
 
 export default function Header() {
   return (

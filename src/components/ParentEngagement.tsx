@@ -1,16 +1,52 @@
-import Image from "next/image";
+"use client";
 
-const img1 =
-  "https://www.figma.com/api/mcp/asset/d9ef553d-89f9-478c-87cf-357c8fdd5980";
-const img2 =
-  "https://www.figma.com/api/mcp/asset/4083d43d-4d2e-4719-a558-2ecbd908b40e";
-const img3 =
-  "https://www.figma.com/api/mcp/asset/e5114d83-2e6e-4177-9bd3-24d1d45ebf3b";
+import { useState } from "react";
 
-const playIcon =
-  "https://www.figma.com/api/mcp/asset/bd16f4e8-6c64-40c8-a1b3-0dcaf32c9114";
+const videos = [
+  { id: "dQw4w9WgXcQ", title: "PTM Event 1" }, // dummy YT link - replace later
+  { id: "dQw4w9WgXcQ", title: "PTM Event 2" }, // dummy YT link - replace later
+  { id: "dQw4w9WgXcQ", title: "PTM Event 3" }, // dummy YT link - replace later
+];
 
-const images = [img1, img2, img3];
+function VideoCard({ videoId, title }: { videoId: string; title: string }) {
+  const [playing, setPlaying] = useState(false);
+  const thumbnail = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
+
+  if (playing) {
+    return (
+      <div className="relative w-[372px] h-[597px] rounded-lg overflow-hidden">
+        <iframe
+          src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
+          title={title}
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+          className="absolute inset-0 w-full h-full"
+        />
+      </div>
+    );
+  }
+
+  return (
+    <button
+      onClick={() => setPlaying(true)}
+      className="relative w-[372px] h-[597px] rounded-lg overflow-hidden group cursor-pointer"
+    >
+      <img
+        src={thumbnail}
+        alt={title}
+        className="absolute inset-0 w-full h-full object-cover"
+      />
+      {/* Play button overlay */}
+      <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/30 transition-colors">
+        <div className="w-[74px] h-[74px] rounded-full bg-white/90 flex items-center justify-center group-hover:scale-110 transition-transform">
+          <svg width="28" height="32" viewBox="0 0 28 32" fill="none">
+            <path d="M28 16L0 32V0L28 16Z" fill="#e57c3a" />
+          </svg>
+        </div>
+      </div>
+    </button>
+  );
+}
 
 export default function ParentEngagement() {
   return (
@@ -23,16 +59,8 @@ export default function ParentEngagement() {
       </p>
 
       <div className="flex gap-[42px]">
-        {images.map((img, i) => (
-          <div key={i} className="relative w-[372px] h-[597px] rounded-lg overflow-hidden group">
-            <Image src={img} alt={`PTM Event ${i + 1}`} fill className="object-cover" />
-            {/* Play button overlay */}
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="relative w-[74px] h-[74px]">
-                <Image src={playIcon} alt="Play" fill />
-              </div>
-            </div>
-          </div>
+        {videos.map((video, i) => (
+          <VideoCard key={i} videoId={video.id} title={video.title} />
         ))}
       </div>
     </section>

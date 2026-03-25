@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 const heroImg =
-  "https://www.figma.com/api/mcp/asset/6246a53e-fa89-4225-9f3d-819807fad50b";
+  "https://ey5228l95bqwogyb.public.blob.vercel-storage.com/Navodaya%20Coaching%202024/hasampur%20hero%20img.png";
 
 export default function HeroImage() {
   return (

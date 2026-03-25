@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const logoUrl =
-  "https://www.figma.com/api/mcp/asset/c5c4dbd4-248f-4ef6-b963-7f285af99d5c";
+  "https://ey5228l95bqwogyb.public.blob.vercel-storage.com/homepage/df_logo.png";
 
 export default function Footer() {
   return (

@@ -1,11 +1,11 @@
 import Image from "next/image";
 
 const student1 =
-  "https://www.figma.com/api/mcp/asset/662dcc43-84e9-44e8-84fd-f466218f0feb";
+  "https://ey5228l95bqwogyb.public.blob.vercel-storage.com/Navodaya%20Coaching%202024/Ritesh%20Meena.png";
 const student2 =
-  "https://www.figma.com/api/mcp/asset/5468c18e-153a-45c7-a94f-7155afde63aa";
+  "https://ey5228l95bqwogyb.public.blob.vercel-storage.com/Navodaya%20Coaching%202024/Shagun%20Tanwar.png";
 const student3 =
-  "https://www.figma.com/api/mcp/asset/93c83cdc-55c4-4608-a538-c6e9b435c52b";
+  "https://ey5228l95bqwogyb.public.blob.vercel-storage.com/Navodaya%20Coaching%202024/Vihan%20Meena.png";
 const confetti =
   "https://www.figma.com/api/mcp/asset/03ca2ca4-640b-490b-8d91-eb6023377858";
 const bgPattern =

@@ -1,9 +1,9 @@
 import Image from "next/image";
 
 const trainer1 =
-  "https://www.figma.com/api/mcp/asset/499458d1-e0c7-4d6c-83f1-8c9d8d71435b";
+  "https://ey5228l95bqwogyb.public.blob.vercel-storage.com/Navodaya%20Coaching%202024/has_trainer%201.png";
 const trainer2 =
-  "https://www.figma.com/api/mcp/asset/a3e6337e-5d56-4c8a-9106-4513202fefbe";
+  "https://ey5228l95bqwogyb.public.blob.vercel-storage.com/Navodaya%20Coaching%202024/has_trainer%202.png";
 
 const trainers = [
   { name: "Bintu Kumar Sharma", image: trainer1 },
