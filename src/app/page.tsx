@@ -21,7 +21,7 @@ export default function Home() {
       <Header />
       <main className="flex-1 bg-[#fffbf8]">
         {/* Hero Section */}
-        <section className="mx-[148px] rounded-[12px] overflow-hidden relative h-[430px]">
+        <section className="mx-[148px] mt-6 rounded-[12px] overflow-hidden relative h-[430px]">
           <Image src={heroImg} alt="Empowering Underprivileged Rural Students" fill className="object-cover" priority />
           <div className="absolute inset-0 flex flex-col justify-center pl-[59px]">
             <h1 className="text-[36px] font-bold text-white w-[511px] leading-normal">
