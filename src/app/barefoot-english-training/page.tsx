@@ -27,7 +27,7 @@ function VideoCard({ id }: { id: string }) {
 
   if (playing) {
     return (
-      <div className="relative w-full aspect-video rounded-lg overflow-hidden">
+      <div className="relative w-[372px] h-[597px] rounded-lg overflow-hidden">
         <iframe
           src={`https://www.youtube.com/embed/${id}?autoplay=1`}
           allow="autoplay; encrypted-media"
@@ -41,7 +41,7 @@ function VideoCard({ id }: { id: string }) {
   return (
     <button
       onClick={() => setPlaying(true)}
-      className="relative w-full aspect-video rounded-lg overflow-hidden group"
+      className="relative w-[372px] h-[597px] rounded-lg overflow-hidden group cursor-pointer"
     >
       <Image
         src={`https://img.youtube.com/vi/${id}/hqdefault.jpg`}
@@ -167,7 +167,7 @@ export default function BarefootEnglishTrainingPage() {
           <h2 className="text-[36px] font-bold text-primary text-center mb-10">
             Testimonials from our students
           </h2>
-          <div className="grid grid-cols-3 gap-6">
+          <div className="flex justify-center gap-[42px]">
             {[0, 1, 2].map((i) => (
               <VideoCard key={i} id={dummyVideoId} />
             ))}
@@ -179,7 +179,7 @@ export default function BarefootEnglishTrainingPage() {
           <h2 className="text-[36px] font-bold text-primary text-center mb-10">
             Testimonials from Trainer
           </h2>
-          <div className="max-w-[640px] mx-auto">
+          <div className="flex justify-center">
             <VideoCard id={dummyVideoId} />
           </div>
         </section>
