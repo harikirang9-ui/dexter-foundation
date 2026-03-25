@@ -63,7 +63,7 @@ export default function Header() {
                 setShowSub(false);
               } else {
                 setIsOpen(true);
-                setShowSub(true);
+                setShowSub(false);
               }
             }}
             className="flex items-center gap-1.5 text-[18px] text-black font-medium hover:text-primary"
@@ -81,11 +81,11 @@ export default function Header() {
                 <div
                   onMouseEnter={() => setShowSub(true)}
                   onClick={() => setShowSub((prev) => !prev)}
-                  className="flex items-center justify-between px-4 py-2.5 cursor-pointer hover:bg-gray-50"
+                  className="group flex items-center justify-between px-4 py-2.5 cursor-pointer hover:bg-gray-50"
                 >
-                  <span className="text-[16px] font-medium text-accent">Navodaya Coaching</span>
+                  <span className="text-[16px] font-medium text-black group-hover:text-accent">Navodaya Coaching</span>
                   <svg width="8" height="12" viewBox="0 0 8 12" fill="none">
-                    <path d="M1 1L6 6L1 11" stroke="#e57c3a" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M1 1L6 6L1 11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-black group-hover:text-accent" />
                   </svg>
                 </div>
                 <Link
@@ -120,7 +120,7 @@ export default function Header() {
           )}
         </div>
 
-        <Link href="/success-stories" className="text-[18px] text-accent font-bold">
+        <Link href="/success-stories" className="text-[18px] text-black font-medium hover:text-primary">
           Success Stories
         </Link>
       </nav>
