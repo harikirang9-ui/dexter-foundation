@@ -27,7 +27,7 @@ function VideoCard({ id }: { id: string }) {
 
   if (playing) {
     return (
-      <div className="relative w-[372px] h-[597px] rounded-lg overflow-hidden">
+      <div className="relative w-full max-w-[372px] h-[597px] rounded-lg overflow-hidden">
         <iframe
           src={`https://www.youtube.com/embed/${id}?autoplay=1`}
           allow="autoplay; encrypted-media"
@@ -41,7 +41,7 @@ function VideoCard({ id }: { id: string }) {
   return (
     <button
       onClick={() => setPlaying(true)}
-      className="relative w-[372px] h-[597px] rounded-lg overflow-hidden group cursor-pointer"
+      className="relative w-full max-w-[372px] h-[597px] rounded-lg overflow-hidden group cursor-pointer"
     >
       <Image
         src={`https://img.youtube.com/vi/${id}/hqdefault.jpg`}
@@ -67,11 +67,11 @@ export default function BarefootEnglishTrainingPage() {
       <Header />
       <main className="flex-1 bg-[#fffbf8]">
         {/* Section 1: Title + Hero */}
-        <section className="px-[150px] pt-12 pb-10">
+        <section className="px-4 md:px-10 lg:px-[150px] pt-12 pb-10">
           <h1 className="text-[36px] font-bold text-primary text-center mb-8">
             Barefoot English Training
           </h1>
-          <div className="relative w-full h-[480px] rounded-lg overflow-hidden">
+          <div className="relative w-full h-[250px] md:h-[350px] lg:h-[480px] rounded-lg overflow-hidden">
             <Image src={heroImg} alt="Barefoot English Training" fill className="object-cover" />
           </div>
           {/* Carousel dots */}
@@ -88,7 +88,7 @@ export default function BarefootEnglishTrainingPage() {
         </section>
 
         {/* Section 2: Description */}
-        <section className="px-[150px] pb-10">
+        <section className="px-4 md:px-10 lg:px-[150px] pb-10">
           <div className="text-[18px] text-[#333] leading-[1.7] text-justify space-y-4 max-w-[1000px] mx-auto">
             <p>
               The English Empowerment Program for Underprivileged Children is a joint initiative by
@@ -109,12 +109,12 @@ export default function BarefootEnglishTrainingPage() {
         </section>
 
         {/* Section 3: Stats cards */}
-        <section className="px-[150px] py-10">
-          <div className="flex gap-6 justify-center">
+        <section className="px-4 md:px-10 lg:px-[150px] py-10">
+          <div className="flex flex-wrap gap-6 justify-center">
             {stats.map((item) => (
               <div
                 key={item.state}
-                className="flex-1 border border-gray-200 rounded-lg py-6 px-4 text-center bg-white"
+                className="flex-1 min-w-[140px] border border-gray-200 rounded-lg py-6 px-4 text-center bg-white"
               >
                 <p className="text-[14px] text-[#666] mb-1">Total Students</p>
                 <p className="text-[40px] font-bold text-accent leading-tight">{item.count}</p>
@@ -125,13 +125,13 @@ export default function BarefootEnglishTrainingPage() {
         </section>
 
         {/* Section 4: Testimonial by NGO Partner */}
-        <section className="px-[150px] py-10">
+        <section className="px-4 md:px-10 lg:px-[150px] py-10">
           <h2 className="text-[36px] font-bold text-primary text-center mb-10">
             Testimonial by NGO Partner
           </h2>
-          <div className="flex rounded-xl overflow-hidden shadow-md bg-white">
+          <div className="flex flex-col lg:flex-row rounded-xl overflow-hidden shadow-md bg-white">
             {/* Left - photo with overlay bg and white name card */}
-            <div className="relative w-[350px] flex-shrink-0">
+            <div className="relative w-full lg:w-[350px] min-h-[350px] lg:min-h-0 flex-shrink-0">
               <Image src={storyOverlay} alt="" fill className="object-cover" />
               <div className="absolute inset-0 z-10 flex flex-col">
                 <div className="flex-1 flex items-center justify-center px-8 pt-8">
@@ -167,11 +167,11 @@ export default function BarefootEnglishTrainingPage() {
         </section>
 
         {/* Section 5: Testimonials from students */}
-        <section className="px-[150px] py-10">
+        <section className="px-4 md:px-10 lg:px-[150px] py-10">
           <h2 className="text-[36px] font-bold text-primary text-center mb-10">
             Testimonials from our students
           </h2>
-          <div className="flex justify-center gap-[42px]">
+          <div className="flex flex-wrap justify-center gap-[42px]">
             {[0, 1, 2].map((i) => (
               <VideoCard key={i} id={dummyVideoId} />
             ))}
@@ -179,7 +179,7 @@ export default function BarefootEnglishTrainingPage() {
         </section>
 
         {/* Section 6: Testimonials from Trainer */}
-        <section className="px-[150px] py-10">
+        <section className="px-4 md:px-10 lg:px-[150px] py-10">
           <h2 className="text-[36px] font-bold text-primary text-center mb-10">
             Testimonials from Trainer
           </h2>

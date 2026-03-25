@@ -91,7 +91,7 @@ export default function OurStoryPage() {
             How Navodaya Made an Impact?
           </h1>
 
-          <div className="flex gap-10 items-start">
+          <div className="flex flex-col lg:flex-row gap-10 items-start">
             {/* Text left */}
             <div className="flex-1 text-[18px] text-[#333] leading-[1.6] text-justify space-y-4">
               <p>
@@ -109,7 +109,7 @@ export default function OurStoryPage() {
             </div>
 
             {/* Image right with overlay */}
-            <div className="flex-shrink-0 w-[440px] h-[340px] relative rounded-[10px] overflow-hidden">
+            <div className="flex-shrink-0 w-full lg:w-[440px] h-[250px] md:h-[340px] relative rounded-[10px] overflow-hidden">
               <Image src={storyOverlay} alt="" fill className="object-cover" />
               <div className="absolute inset-0">
                 <Image src={impactImg} alt="How Navodaya Made an Impact" fill className="object-cover" />
@@ -119,12 +119,12 @@ export default function OurStoryPage() {
         </section>
 
         {/* What started as a simple decision */}
-        <section className="px-[150px] pb-10">
+        <section className="px-4 md:px-10 lg:px-[150px] pb-10">
           <h2 className="text-[22px] font-bold text-[#333] mb-8 leading-[1.4]">
             {`What started as a simple decision—to send one child to Navodaya as a role model—turned into something much bigger:`}
           </h2>
 
-          <div className="flex gap-10">
+          <div className="flex flex-col md:flex-row gap-10">
             <div className="flex items-start gap-4 flex-1">
               <div className="w-[50px] h-[50px] flex-shrink-0 relative">
                 <Image src={icon1} alt="" fill className="object-contain" />
@@ -153,10 +153,10 @@ export default function OurStoryPage() {
         </section>
 
         {/* Divider */}
-        <div className="mx-[150px] border-t border-[#ddd]" />
+        <div className="mx-4 md:mx-10 lg:mx-[150px] border-t border-[#ddd]" />
 
         {/* How it changed our family's journey? - with fade-in */}
-        <section className="px-[150px] py-10">
+        <section className="px-4 md:px-10 lg:px-[150px] py-10">
           <div
             ref={fadeRef}
             className="opacity-0 translate-y-8 transition-all duration-700 ease-out"
@@ -171,9 +171,9 @@ export default function OurStoryPage() {
             {timeline.map((item, i) => (
               <div key={i} className="flex gap-0">
                 {/* Year */}
-                <div className="w-[120px] flex-shrink-0 text-right pr-6 pt-1">
+                <div className="w-[60px] lg:w-[120px] flex-shrink-0 text-right pr-3 lg:pr-6 pt-1">
                   {item.year && (
-                    <p className="text-[40px] font-bold text-[#8FAFCF] italic leading-none">
+                    <p className="text-[24px] lg:text-[40px] font-bold text-[#8FAFCF] italic leading-none">
                       {item.year}
                     </p>
                   )}

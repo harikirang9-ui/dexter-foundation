@@ -41,7 +41,7 @@ export default function ParticipantDirectory({ participants = [] }: ParticipantD
       </div>
 
       {/* Table */}
-      <div className="max-w-[836px] mx-auto border border-[#ccc] rounded-[10px] overflow-hidden">
+      <div className="max-w-[836px] mx-auto border border-[#ccc] rounded-[10px] overflow-x-auto">
         {/* Header */}
         <div className="bg-[#f9f1ec] grid grid-cols-[80px_1fr_1fr] items-center h-[59px] border-b border-[#ccc]">
           <span className="text-[18px] font-semibold text-black pl-[51px]">Sl No</span>
