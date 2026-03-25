@@ -1,15 +1,18 @@
 import Image from "next/image";
 
-const heroImg =
-  "https://ey5228l95bqwogyb.public.blob.vercel-storage.com/Navodaya%20Coaching%202024/hasampur%20hero%20img.png";
+interface HeroImageProps {
+  images?: string[];
+}
 
-export default function HeroImage() {
+export default function HeroImage({ images = [] }: HeroImageProps) {
+  if (images.length === 0) return null;
+
   return (
     <section id="program-structure" className="px-[150px] mb-8">
       <div className="relative w-full h-[468px] rounded-[20px] overflow-hidden">
         <Image
-          src={heroImg}
-          alt="Classroom at Hasampur, Neem ka Thana"
+          src={images[0]}
+          alt="Program Structure"
           fill
           className="object-cover"
           priority
@@ -17,10 +20,12 @@ export default function HeroImage() {
       </div>
       {/* Carousel Dots */}
       <div className="flex items-center justify-center gap-2 mt-4">
-        <span className="w-2.5 h-2.5 rounded-full bg-accent" />
-        <span className="w-2.5 h-2.5 rounded-full bg-[#d9d9d9]" />
-        <span className="w-2.5 h-2.5 rounded-full bg-[#d9d9d9]" />
-        <span className="w-2.5 h-2.5 rounded-full bg-[#d9d9d9]" />
+        {images.map((_, i) => (
+          <span
+            key={i}
+            className={`w-2.5 h-2.5 rounded-full ${i === 0 ? "bg-accent" : "bg-[#d9d9d9]"}`}
+          />
+        ))}
       </div>
     </section>
   );

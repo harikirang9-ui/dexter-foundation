@@ -1,12 +1,7 @@
 "use client";
 
 import { useState } from "react";
-
-const videos = [
-  { id: "dQw4w9WgXcQ", title: "PTM Event 1" }, // dummy YT link - replace later
-  { id: "dQw4w9WgXcQ", title: "PTM Event 2" }, // dummy YT link - replace later
-  { id: "dQw4w9WgXcQ", title: "PTM Event 3" }, // dummy YT link - replace later
-];
+import type { Video } from "@/data/coaching-data";
 
 function VideoCard({ videoId, title }: { videoId: string; title: string }) {
   const [playing, setPlaying] = useState(false);
@@ -48,7 +43,13 @@ function VideoCard({ videoId, title }: { videoId: string; title: string }) {
   );
 }
 
-export default function ParentEngagement() {
+interface ParentEngagementProps {
+  videos?: Video[];
+}
+
+export default function ParentEngagement({ videos = [] }: ParentEngagementProps) {
+  if (videos.length === 0) return null;
+
   return (
     <section id="ptm" className="bg-[#fffbf8] py-12 px-[150px]">
       <h2 className="text-[36px] font-bold text-primary text-center mb-2">

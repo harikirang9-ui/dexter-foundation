@@ -1,29 +1,21 @@
 "use client";
 
 import { useState } from "react";
+import type { Student } from "@/data/coaching-data";
 
-const students = [
-  { name: "Neeraj", dob: "11-Aug-2014" },
-  { name: "Nisha Saini", dob: "16-May-2015" },
-  { name: "Avni Saini", dob: "26-Apr-2015" },
-  { name: "Jyoti Saini", dob: "12-Apr-2015" },
-  { name: "Ekta", dob: "30-Jun-2014" },
-  { name: "Yanshika", dob: "01-Jul-2015" },
-  { name: "Sonam", dob: "03-May-2015" },
-  { name: "Divya", dob: "26-Jul-2013" },
-  { name: "Helant", dob: "01-Jul-2014" },
-  { name: "Gunjan Saini", dob: "19-Dec-2014" },
-  { name: "Hardik Shekhawat", dob: "30-Jun-2014" },
-  { name: "Jay Shree Arya", dob: "12-Jul-2014" },
-];
+interface ParticipantDirectoryProps {
+  participants?: Student[];
+}
 
-export default function ParticipantDirectory() {
+export default function ParticipantDirectory({ participants = [] }: ParticipantDirectoryProps) {
   const [search, setSearch] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
 
-  const filtered = students.filter((s) =>
+  const filtered = participants.filter((s) =>
     s.name.toLowerCase().includes(search.toLowerCase())
   );
+
+  if (participants.length === 0) return null;
 
   return (
     <section id="participant-directory" className="bg-white py-12 px-[150px]">

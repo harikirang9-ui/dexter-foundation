@@ -1,23 +1,18 @@
 import Image from "next/image";
+import type { SelectedStudent } from "@/data/coaching-data";
 
-const student1 =
-  "https://ey5228l95bqwogyb.public.blob.vercel-storage.com/Navodaya%20Coaching%202024/Ritesh%20Meena.png";
-const student2 =
-  "https://ey5228l95bqwogyb.public.blob.vercel-storage.com/Navodaya%20Coaching%202024/Shagun%20Tanwar.png";
-const student3 =
-  "https://ey5228l95bqwogyb.public.blob.vercel-storage.com/Navodaya%20Coaching%202024/Vihan%20Meena.png";
 const confetti =
   "https://www.figma.com/api/mcp/asset/03ca2ca4-640b-490b-8d91-eb6023377858";
 const bgPattern =
   "https://www.figma.com/api/mcp/asset/29c329d1-43b5-4d8e-9429-d208ae2c1371";
 
-const selectedStudents = [
-  { name: "Ritesh Meena", image: student1 },
-  { name: "Shagun Tanwar", image: student2 },
-  { name: "Vihan Meena", image: student3 },
-];
+interface SelectedStudentsProps {
+  students?: SelectedStudent[];
+}
 
-export default function SelectedStudents() {
+export default function SelectedStudents({ students = [] }: SelectedStudentsProps) {
+  if (students.length === 0) return null;
+
   return (
     <section className="py-12 px-[150px]">
       <div className="max-w-[836px] mx-auto relative rounded-[10px] border border-[#b1c8e0] bg-gradient-to-b from-[#f3f9ff] to-white overflow-hidden py-10 px-8">
@@ -39,7 +34,7 @@ export default function SelectedStudents() {
         </h3>
 
         <div className="flex items-end justify-center gap-12 relative z-10">
-          {selectedStudents.map((student) => (
+          {students.map((student) => (
             <div key={student.name} className="flex flex-col items-center gap-3">
               <div className="relative w-[140px] h-[140px] rounded-full overflow-hidden border-2 border-primary/20">
                 <Image

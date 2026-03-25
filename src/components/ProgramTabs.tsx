@@ -6,11 +6,16 @@ import { useRouter } from "next/navigation";
 const years = [2023, 2024, 2025];
 const locations = ["Kotputli, Behror", "Bhatinda, Jodhpur", "Hasampur, Neem ka Thana", "Sojat, Pali"];
 
-export default function ProgramTabs({ year = 2024 }: { year?: number }) {
+interface ProgramTabsProps {
+  year?: number;
+  activeLocation: string;
+  onLocationChange: (location: string) => void;
+}
+
+export default function ProgramTabs({ year = 2024, activeLocation, onLocationChange }: ProgramTabsProps) {
   const router = useRouter();
   const [yearDropdownOpen, setYearDropdownOpen] = useState(false);
   const [activeTab, setActiveTab] = useState(`Program Structure - ${year}`);
-  const [activeLocation, setActiveLocation] = useState("Hasampur, Neem ka Thana");
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   const tabs = [
@@ -109,7 +114,7 @@ export default function ProgramTabs({ year = 2024 }: { year?: number }) {
           {locations.map((loc) => (
             <button
               key={loc}
-              onClick={() => setActiveLocation(loc)}
+              onClick={() => onLocationChange(loc)}
               className={`px-[31px] py-[10px] rounded-full text-[16px] transition-colors ${
                 activeLocation === loc
                   ? "bg-accent text-white"

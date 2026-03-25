@@ -1,16 +1,13 @@
 import Image from "next/image";
+import type { Trainer } from "@/data/coaching-data";
 
-const trainer1 =
-  "https://ey5228l95bqwogyb.public.blob.vercel-storage.com/Navodaya%20Coaching%202024/has_trainer%201.png";
-const trainer2 =
-  "https://ey5228l95bqwogyb.public.blob.vercel-storage.com/Navodaya%20Coaching%202024/has_trainer%202.png";
+interface TrainersProps {
+  trainers?: Trainer[];
+}
 
-const trainers = [
-  { name: "Bintu Kumar Sharma", image: trainer1 },
-  { name: "Seema", image: trainer2 },
-];
+export default function Trainers({ trainers = [] }: TrainersProps) {
+  if (trainers.length === 0) return null;
 
-export default function Trainers() {
   return (
     <section id="trainers" className="bg-white py-12 px-[150px]">
       <h2 className="text-[36px] font-bold text-primary text-center mb-10">
