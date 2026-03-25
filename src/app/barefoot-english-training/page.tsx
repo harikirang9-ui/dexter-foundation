@@ -130,15 +130,19 @@ export default function BarefootEnglishTrainingPage() {
             Testimonial by NGO Partner
           </h2>
           <div className="flex rounded-xl overflow-hidden shadow-md bg-white">
-            {/* Left - image with overlay */}
-            <div className="relative w-[320px] flex-shrink-0">
+            {/* Left - photo with overlay bg and white name card */}
+            <div className="relative w-[350px] flex-shrink-0">
               <Image src={storyOverlay} alt="" fill className="object-cover" />
-              <div className="absolute inset-0 flex flex-col items-center justify-center z-10">
-                <div className="relative w-[180px] h-[180px] rounded-full overflow-hidden mb-4">
-                  <Image src={rafikImg} alt="Rafik Mohammad" fill className="object-cover" />
+              <div className="absolute inset-0 z-10 flex flex-col">
+                <div className="flex-1 flex items-center justify-center px-8 pt-8">
+                  <div className="relative w-[250px] h-[280px]">
+                    <Image src={rafikImg} alt="Rafik Mohammad" fill className="object-cover object-top" />
+                  </div>
                 </div>
-                <p className="text-[20px] font-bold text-accent">Rafik Mohammad</p>
-                <p className="text-[16px] text-white">NGO Partner</p>
+                <div className="bg-white mx-6 mb-6 rounded-[5px] px-4 py-3">
+                  <p className="text-[18px] font-bold text-accent leading-[1.4]">Rafik Mohammad</p>
+                  <p className="text-[14px] text-[#333]">NGO Partner</p>
+                </div>
               </div>
             </div>
             {/* Right - text */}
