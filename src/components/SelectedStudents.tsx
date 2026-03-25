@@ -14,7 +14,7 @@ export default function SelectedStudents({ students = [] }: SelectedStudentsProp
   if (students.length === 0) return null;
 
   return (
-    <section className="py-12 px-[150px]">
+    <section className="py-12 px-4 md:px-10 lg:px-[150px]">
       <div className="max-w-[836px] mx-auto relative rounded-[10px] border border-[#b1c8e0] bg-gradient-to-b from-[#f3f9ff] to-white overflow-hidden py-10 px-8">
         {/* Background pattern */}
         <div className="absolute inset-0">
@@ -33,7 +33,7 @@ export default function SelectedStudents({ students = [] }: SelectedStudentsProp
           Selected Students
         </h3>
 
-        <div className="flex items-end justify-center gap-12 relative z-10">
+        <div className="flex flex-wrap items-end justify-center gap-12 relative z-10">
           {students.map((student) => (
             <div key={student.name} className="flex flex-col items-center gap-3">
               <div className="relative w-[140px] h-[140px] rounded-full overflow-hidden border-2 border-primary/20">

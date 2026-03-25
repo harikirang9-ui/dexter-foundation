@@ -54,7 +54,7 @@ export default function ProgramTabs({ year = 2024, activeLocation, onLocationCha
 
   return (
     <>
-      <section className="bg-[#fffbf8] pt-8 px-[150px]">
+      <section className="bg-[#fffbf8] pt-8 px-4 md:px-10 lg:px-[150px]">
         {/* Title + Year */}
         <div className="flex items-center justify-center gap-4 mb-6">
           <h1 className="text-[36px] font-bold text-primary text-center">
@@ -90,8 +90,8 @@ export default function ProgramTabs({ year = 2024, activeLocation, onLocationCha
       </section>
 
       {/* Sticky Tabs */}
-      <div id="sticky-tabs" className="sticky top-[calc(var(--header-height,100px))] z-40 bg-[#fffbf8] border-b-[3px] border-[#e8e8e8] px-[150px]">
-        <div className="flex justify-center gap-8">
+      <div id="sticky-tabs" className="sticky top-[calc(var(--header-height,100px))] z-40 bg-[#fffbf8] border-b-[3px] border-[#e8e8e8] px-4 md:px-10 lg:px-[150px]">
+        <div className="flex justify-center gap-4 lg:gap-8 flex-wrap">
           {tabs.map((tab) => (
             <button
               key={tab.label}
@@ -108,9 +108,9 @@ export default function ProgramTabs({ year = 2024, activeLocation, onLocationCha
         </div>
       </div>
 
-      <section className="bg-[#fffbf8] px-[150px]">
+      <section className="bg-[#fffbf8] px-4 md:px-10 lg:px-[150px]">
         {/* Location Pills */}
-        <div className="flex items-center justify-center gap-4 mt-6 mb-6">
+        <div className="flex items-center justify-center gap-3 lg:gap-4 mt-6 mb-6 flex-wrap">
           {locations.map((loc) => (
             <button
               key={loc}

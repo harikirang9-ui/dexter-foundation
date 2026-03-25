@@ -41,12 +41,12 @@ export default function Header() {
   return (
     <header
       ref={headerRef}
-      className="sticky top-0 z-50 flex items-center justify-between px-[150px] py-4 bg-white shadow-sm"
+      className="sticky top-0 z-50 flex items-center justify-between px-4 md:px-10 lg:px-[150px] py-4 bg-white shadow-sm"
     >
       <Link href="/" className="flex items-center gap-3">
         <Image src={logoUrl} alt="Dexter Foundation" width={120} height={100} />
       </Link>
-      <nav className="flex items-center gap-10">
+      <nav className="flex items-center gap-4 lg:gap-10 flex-wrap">
         <Link href="/our-story" className="text-[18px] text-black font-medium hover:text-primary">
           Our Story
         </Link>

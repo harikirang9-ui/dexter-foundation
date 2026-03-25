@@ -18,7 +18,7 @@ export default function ParticipantDirectory({ participants = [] }: ParticipantD
   if (participants.length === 0) return null;
 
   return (
-    <section id="participant-directory" className="bg-white py-12 px-[150px]">
+    <section id="participant-directory" className="bg-white py-12 px-4 md:px-10 lg:px-[150px]">
       <h2 className="text-[36px] font-bold text-primary text-center mb-8">
         Participant Directory
       </h2>

@@ -9,7 +9,7 @@ function VideoCard({ videoId, title }: { videoId: string; title: string }) {
 
   if (playing) {
     return (
-      <div className="relative w-[372px] h-[597px] rounded-lg overflow-hidden">
+      <div className="relative w-full max-w-[372px] h-[597px] rounded-lg overflow-hidden">
         <iframe
           src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
           title={title}
@@ -24,7 +24,7 @@ function VideoCard({ videoId, title }: { videoId: string; title: string }) {
   return (
     <button
       onClick={() => setPlaying(true)}
-      className="relative w-[372px] h-[597px] rounded-lg overflow-hidden group cursor-pointer"
+      className="relative w-full max-w-[372px] h-[597px] rounded-lg overflow-hidden group cursor-pointer"
     >
       <img
         src={thumbnail}
@@ -51,7 +51,7 @@ export default function ParentEngagement({ videos = [] }: ParentEngagementProps)
   if (videos.length === 0) return null;
 
   return (
-    <section id="ptm" className="bg-[#fffbf8] py-12 px-[150px]">
+    <section id="ptm" className="bg-[#fffbf8] py-12 px-4 md:px-10 lg:px-[150px]">
       <h2 className="text-[36px] font-bold text-primary text-center mb-2">
         Engaging Parents, Empowering Students
       </h2>
@@ -59,7 +59,7 @@ export default function ParentEngagement({ videos = [] }: ParentEngagementProps)
         Regular PTMs to track progress and build support
       </p>
 
-      <div className="flex justify-center gap-[42px]">
+      <div className="flex flex-wrap justify-center gap-[42px]">
         {videos.map((video, i) => (
           <VideoCard key={i} videoId={video.id} title={video.title} />
         ))}

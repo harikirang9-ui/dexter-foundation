@@ -13,7 +13,7 @@ export default function TeamPage() {
       <Header />
       <main className="flex-1 bg-[#fffbf8]">
         {/* Title */}
-        <section className="pt-12 pb-8 px-[150px]">
+        <section className="pt-12 pb-8 px-4 md:px-10 lg:px-[150px]">
           <h1 className="text-[36px] font-bold text-primary text-center mb-4">
             Team
           </h1>
@@ -24,10 +24,10 @@ export default function TeamPage() {
         </section>
 
         {/* Devendra Agrawal - Image Left, Text Right */}
-        <section className="px-[150px] py-10">
-          <div className="flex gap-12 items-start">
-            <div className="flex-shrink-0 relative w-[440px] h-[485px]">
-              <div className="absolute bottom-0 left-0 w-full h-[435px] bg-[#d8d8d8] rounded-sm" />
+        <section className="px-4 md:px-10 lg:px-[150px] py-10">
+          <div className="flex flex-col lg:flex-row gap-12 items-start">
+            <div className="flex-shrink-0 relative w-full lg:w-[440px] h-[350px] lg:h-[485px]">
+              <div className="absolute bottom-0 left-0 w-full h-[300px] lg:h-[435px] bg-[#d8d8d8] rounded-sm" />
               <div className="absolute inset-0 overflow-hidden">
                 <Image
                   src={devendraImg}
@@ -37,7 +37,7 @@ export default function TeamPage() {
                 />
               </div>
             </div>
-            <div className="flex-1 pt-12">
+            <div className="flex-1 pt-0 lg:pt-12">
               <h2 className="text-[24px] font-bold text-[#333] mb-1">
                 Devendra Agrawal
               </h2>
@@ -57,8 +57,8 @@ export default function TeamPage() {
         </section>
 
         {/* Anuradha Agarwal - Text Left, Image Right */}
-        <section className="px-[150px] py-10">
-          <div className="flex gap-12 items-start">
+        <section className="px-4 md:px-10 lg:px-[150px] py-10">
+          <div className="flex flex-col lg:flex-row gap-12 items-start">
             <div className="flex-1">
               <h2 className="text-[24px] font-bold text-[#333] mb-1">
                 Anuradha Agarwal
@@ -75,8 +75,8 @@ export default function TeamPage() {
                 </p>
               </div>
             </div>
-            <div className="flex-shrink-0 relative w-[440px] h-[481px]">
-              <div className="absolute bottom-0 left-0 w-full h-[435px] bg-[#d8d8d8] rounded-sm" />
+            <div className="flex-shrink-0 relative w-full lg:w-[440px] h-[350px] lg:h-[481px]">
+              <div className="absolute bottom-0 left-0 w-full h-[300px] lg:h-[435px] bg-[#d8d8d8] rounded-sm" />
               <div className="absolute inset-0 overflow-hidden">
                 <Image
                   src={anuradhaImg}
@@ -90,10 +90,10 @@ export default function TeamPage() {
         </section>
 
         {/* Sunita Agrawal - Image Left, Text Right */}
-        <section className="px-[150px] py-10">
-          <div className="flex gap-12 items-start">
-            <div className="flex-shrink-0 relative w-[440px] h-[489px]">
-              <div className="absolute bottom-0 left-0 w-full h-[435px] bg-[#d8d8d8] rounded-sm" />
+        <section className="px-4 md:px-10 lg:px-[150px] py-10">
+          <div className="flex flex-col lg:flex-row gap-12 items-start">
+            <div className="flex-shrink-0 relative w-full lg:w-[440px] h-[350px] lg:h-[489px]">
+              <div className="absolute bottom-0 left-0 w-full h-[300px] lg:h-[435px] bg-[#d8d8d8] rounded-sm" />
               <div className="absolute inset-0 overflow-hidden">
                 <Image
                   src={sunitaImg}
@@ -103,7 +103,7 @@ export default function TeamPage() {
                 />
               </div>
             </div>
-            <div className="flex-1 pt-12">
+            <div className="flex-1 pt-0 lg:pt-12">
               <h2 className="text-[24px] font-bold text-[#333] mb-1">
                 Sunita Agrawal
               </h2>
@@ -126,9 +126,9 @@ export default function TeamPage() {
         </section>
 
         {/* Our mistakes and learning */}
-        <section className="mx-[150px] my-10 bg-[#4a749e] rounded-sm overflow-hidden">
-          <div className="flex">
-            <div className="flex-1 px-12 py-12">
+        <section className="mx-4 md:mx-10 lg:mx-[150px] my-10 bg-[#4a749e] rounded-sm overflow-hidden">
+          <div className="flex flex-col lg:flex-row">
+            <div className="flex-1 px-6 lg:px-12 py-12">
               <h2 className="text-[36px] font-bold text-white mb-6 leading-[1.4]">
                 Our mistakes and learning
               </h2>

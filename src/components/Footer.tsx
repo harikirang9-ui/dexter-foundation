@@ -7,8 +7,8 @@ const logoUrl =
 export default function Footer() {
   return (
     <footer className="bg-white border-t border-[#dbd9d7] mt-12">
-      <div className="px-[150px] py-12">
-        <div className="flex justify-between">
+      <div className="px-4 md:px-10 lg:px-[150px] py-12">
+        <div className="flex flex-col md:flex-row md:flex-wrap lg:flex-nowrap justify-between gap-8">
           {/* Logo */}
           <div className="flex items-start gap-3">
             <Image src={logoUrl} alt="Dexter Foundation" width={140} height={116} />
@@ -46,7 +46,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom bar */}
-      <div className="border-t border-[#dbd9d7] mx-[150px]" />
+      <div className="border-t border-[#dbd9d7] mx-4 md:mx-10 lg:mx-[150px]" />
       <div className="text-center py-4">
         <p className="text-[16px] text-[#333]">
           © 2025 Dexter Foundation. All Rights Reserved.

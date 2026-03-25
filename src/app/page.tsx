@@ -20,13 +20,13 @@ export default function Home() {
       <Header />
       <main className="flex-1 bg-[#fffbf8]">
         {/* Hero Section */}
-        <section className="mx-[148px] mt-8 rounded-[12px] overflow-hidden relative h-[430px]">
+        <section className="mx-4 md:mx-10 lg:mx-[148px] mt-8 rounded-[12px] overflow-hidden relative h-[250px] md:h-[350px] lg:h-[430px]">
           <Image src={heroImg} alt="Empowering Underprivileged Rural Students" fill className="object-cover" priority />
-          <div className="absolute inset-0 flex flex-col justify-center pl-[59px]">
-            <h1 className="text-[36px] font-bold text-white w-[511px] leading-normal">
+          <div className="absolute inset-0 flex flex-col justify-center pl-4 md:pl-[59px]">
+            <h1 className="text-[22px] md:text-[28px] lg:text-[36px] font-bold text-white max-w-[511px] leading-normal">
               Empowering Underpriviledged Rural Students
             </h1>
-            <p className="text-[26px] text-white mt-2">
+            <p className="text-[16px] md:text-[20px] lg:text-[26px] text-white mt-2">
               Changing Lives through Education
             </p>
             <div className="flex gap-5 mt-8">
@@ -44,27 +44,27 @@ export default function Home() {
         </section>
 
         {/* Our Vision */}
-        <section className="px-[146px] pt-10 pb-10">
+        <section className="px-4 md:px-10 lg:px-[146px] pt-10 pb-10">
           <h2 className="text-[34px] font-bold text-primary mb-6">Our Vision</h2>
-          <p className="text-[36px] text-[#333] leading-[1.4] max-w-[1212px]">
+          <p className="text-[22px] md:text-[28px] lg:text-[36px] text-[#333] leading-[1.4] max-w-[1212px]">
             Dexter Foundation is the brain child of our Founder, Devendra Agrawal, who was born in a small village of Rajasthan, Hasampur and discovered education as the single most important life-altering parameter in his life. The foundation is committed to enable rural underprivileged kids to discover education opportunities and experience a huge impact resulting from it.
           </p>
         </section>
 
         {/* Our Journey Stats */}
-        <section className="px-[146px] pb-10">
-          <div className="flex items-center gap-16">
+        <section className="px-4 md:px-10 lg:px-[146px] pb-10">
+          <div className="flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-16">
             <h2 className="text-[34px] font-bold text-primary">Our Journey</h2>
-            <div className="flex items-center gap-0">
+            <div className="flex flex-col md:flex-row items-start md:items-center gap-0">
               <div className="pr-12">
                 <p className="text-[42px] font-bold text-[#333]">350+</p>
                 <p className="text-[24px] text-[#898989]">Students Trained</p>
               </div>
-              <div className="border-l border-[#ccc] px-12">
+              <div className="md:border-l border-[#ccc] px-0 md:px-12">
                 <p className="text-[42px] font-bold text-[#333]">9</p>
                 <p className="text-[24px] text-[#898989]">Locations</p>
               </div>
-              <div className="border-l border-[#ccc] pl-12">
+              <div className="md:border-l border-[#ccc] pl-0 md:pl-12">
                 <p className="text-[42px] font-bold text-[#333]">4k+</p>
                 <p className="text-[24px] text-[#898989]">Hours of Training</p>
               </div>
@@ -79,9 +79,9 @@ export default function Home() {
           </h2>
 
           {/* Navodaya Entrance Exam Card */}
-          <div className="mx-[220px] bg-white rounded-[10px] shadow-[0px_0px_10px_2px_rgba(0,0,0,0.1)] overflow-hidden mb-10 relative z-10">
-            <div className="flex">
-              <div className="w-[357px] h-[383px] flex-shrink-0 relative">
+          <div className="mx-4 md:mx-10 lg:mx-[220px] bg-white rounded-[10px] shadow-[0px_0px_10px_2px_rgba(0,0,0,0.1)] overflow-hidden mb-10 relative z-10">
+            <div className="flex flex-col lg:flex-row">
+              <div className="w-full lg:w-[357px] h-[250px] lg:h-[383px] flex-shrink-0 relative">
                 <Image src={navodayaImg} alt="Navodaya Entrance Exam" fill className="object-cover" />
               </div>
               <div className="flex-1 p-10">
@@ -106,9 +106,9 @@ export default function Home() {
           </div>
 
           {/* Barefoot English Training Card */}
-          <div className="mx-[220px] bg-white rounded-[10px] shadow-[0px_0px_10px_2px_rgba(0,0,0,0.1)] overflow-hidden relative z-10">
-            <div className="flex">
-              <div className="w-[357px] h-[405px] flex-shrink-0 relative">
+          <div className="mx-4 md:mx-10 lg:mx-[220px] bg-white rounded-[10px] shadow-[0px_0px_10px_2px_rgba(0,0,0,0.1)] overflow-hidden relative z-10">
+            <div className="flex flex-col lg:flex-row">
+              <div className="w-full lg:w-[357px] h-[250px] lg:h-[405px] flex-shrink-0 relative">
                 <Image src={barefootImg} alt="Barefoot English Training" fill className="object-cover" />
               </div>
               <div className="flex-1 p-10">
@@ -128,7 +128,7 @@ export default function Home() {
         </section>
 
         {/* No, not just a program! It's a community */}
-        <section className="mx-[148px] bg-white rounded-[10px] shadow-[0px_0px_15px_0px_rgba(0,0,0,0.15)] overflow-hidden relative my-10">
+        <section className="mx-4 md:mx-10 lg:mx-[148px] bg-white rounded-[10px] shadow-[0px_0px_15px_0px_rgba(0,0,0,0.15)] overflow-hidden relative my-10">
           {/* Background community image */}
           <div className="absolute right-0 top-0 w-[500px] h-full">
             <Image src={communityImg} alt="" fill className="object-cover object-right" />
@@ -169,14 +169,14 @@ export default function Home() {
         <PeopleCarousel />
 
         {/* Partnering for Impact */}
-        <section className="px-[145px] py-10">
+        <section className="px-4 md:px-10 lg:px-[145px] py-10">
           <p className="text-[24px] text-[#5d5d5d] text-center max-w-[1182px] mx-auto mb-2 leading-[1.2]">
             This initiative reflects our belief that access to <span className="font-bold text-[#272727]">quality education can transform lives</span> and that every child deserves the chance to dream big.
           </p>
 
-          <div className="flex gap-8 mt-10 items-start">
+          <div className="flex flex-col lg:flex-row gap-8 mt-10 items-start">
             {/* Left side - image with partners */}
-            <div className="flex-shrink-0 relative w-[489px] h-[461px]">
+            <div className="flex-shrink-0 relative w-full lg:w-[489px] h-[300px] md:h-[400px] lg:h-[461px]">
               <Image src={partneringImg} alt="Partnering for Impact" fill className="object-contain" />
             </div>
 

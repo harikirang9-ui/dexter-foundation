@@ -48,7 +48,7 @@ export default function PeopleCarousel() {
   const person = people[activeIndex];
 
   return (
-    <section className="py-10 px-[150px]">
+    <section className="py-10 px-4 md:px-10 lg:px-[150px]">
       <h2 className="text-[36px] font-bold text-primary text-center mb-3">
         Our Journey, Our People
       </h2>
@@ -58,9 +58,9 @@ export default function PeopleCarousel() {
 
       {/* Card */}
       <div className="bg-white rounded-[6px] shadow-[0px_2px_12px_0px_rgba(0,0,0,0.1)] overflow-hidden max-w-[1212px] mx-auto">
-        <div className="flex">
+        <div className="flex flex-col lg:flex-row">
           {/* Photo side */}
-          <div className="w-[435px] flex-shrink-0 relative min-h-[417px]">
+          <div className="w-full lg:w-[435px] flex-shrink-0 relative min-h-[300px] lg:min-h-[417px]">
             <div className="absolute left-[27px] top-[34px] w-[381px] h-[349px] overflow-hidden">
               <Image
                 src={person.bgOverlay}
@@ -88,7 +88,7 @@ export default function PeopleCarousel() {
           </div>
 
           {/* Story side */}
-          <div className="flex-1 py-8 pr-10">
+          <div className="flex-1 py-8 px-6 lg:pl-0 lg:pr-10">
             <p className="text-[14px] text-[#333] leading-[1.2] text-justify whitespace-pre-line">
               {person.story}
             </p>

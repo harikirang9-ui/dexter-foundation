@@ -8,8 +8,8 @@ export default function HeroImage({ images = [] }: HeroImageProps) {
   if (images.length === 0) return null;
 
   return (
-    <section id="program-structure" className="px-[150px] mb-8">
-      <div className="relative w-full h-[468px] rounded-[20px] overflow-hidden">
+    <section id="program-structure" className="px-4 md:px-10 lg:px-[150px] mb-8">
+      <div className="relative w-full h-[250px] md:h-[350px] lg:h-[468px] rounded-[20px] overflow-hidden">
         <Image
           src={images[0]}
           alt="Program Structure"
