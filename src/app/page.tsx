@@ -7,7 +7,6 @@ import PeopleCarousel from "@/components/PeopleCarousel";
 const heroImg = "https://ey5228l95bqwogyb.public.blob.vercel-storage.com/homepage/Empowering%20Underpriviledged%20Rural%20Students.png";
 const navodayaImg = "https://ey5228l95bqwogyb.public.blob.vercel-storage.com/homepage/Navodaya%20Entrance%20Exam.png";
 const barefootImg = "https://ey5228l95bqwogyb.public.blob.vercel-storage.com/homepage/Barefoot%20English%20Training.png";
-const circleVector = "https://ey5228l95bqwogyb.public.blob.vercel-storage.com/homepage/Free%20Coaching_circle.png";
 const communityImg = "https://ey5228l95bqwogyb.public.blob.vercel-storage.com/homepage/No%2C%20not%20just%20a%20program%21%20It%27s%20a%20community.png";
 const tickIcon = "https://ey5228l95bqwogyb.public.blob.vercel-storage.com/homepage/tick.png";
 const partneringImg = "https://ey5228l95bqwogyb.public.blob.vercel-storage.com/homepage/Partnering%20for%20Impact.png";
@@ -74,15 +73,7 @@ export default function Home() {
         </section>
 
         {/* Free Coaching */}
-        <section className="relative py-16 bg-gradient-to-b from-[#d4956a] via-[#c4814f] to-[#b87040]">
-          {/* Circle bg decoration */}
-          <div className="absolute right-[-50px] top-[-80px] w-[474px] h-[474px] opacity-30">
-            <Image src={circleVector} alt="" fill className="object-contain" />
-          </div>
-          <div className="absolute left-[-80px] bottom-[-60px] w-[252px] h-[252px] opacity-30">
-            <Image src={circleVector} alt="" fill className="object-contain" />
-          </div>
-
+        <section className="relative py-16 bg-[#4A749E] overflow-hidden">
           <h2 className="text-[34px] font-bold text-white text-center mb-10 relative z-10">
             Free Coaching
           </h2>
