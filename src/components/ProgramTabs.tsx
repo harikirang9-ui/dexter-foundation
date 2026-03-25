@@ -71,7 +71,7 @@ export default function ProgramTabs({ year = 2024, activeLocation, onLocationCha
               </svg>
             </button>
             {yearDropdownOpen && (
-              <div className="absolute top-full left-0 mt-1 bg-white border border-[#d6dadf] rounded-[5px] shadow-md z-20 w-full">
+              <div className="absolute top-full left-0 mt-1 bg-white border border-[#d6dadf] rounded-[5px] shadow-md z-50 w-full">
                 {years.map((y) => (
                   <button
                     key={y}
