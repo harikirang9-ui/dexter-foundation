@@ -131,18 +131,21 @@ export default function BarefootEnglishTrainingPage() {
           </h2>
           <div className="flex flex-col lg:flex-row rounded-[6px] overflow-hidden shadow-[0px_2px_12px_0px_rgba(0,0,0,0.1)] bg-white">
             {/* Left - photo with overlay bg and white name card */}
-            <div className="relative w-full lg:w-[435px] flex-shrink-0 min-h-[350px] lg:min-h-[417px]">
-              <div className="absolute left-[27px] top-[34px] w-[calc(100%-54px)] lg:w-[381px] h-[349px] overflow-hidden">
+            <div className="relative w-full lg:w-[435px] flex-shrink-0 min-h-[420px] lg:min-h-[450px]">
+              {/* Overlay bg */}
+              <div className="absolute left-[27px] top-[34px] w-[calc(100%-54px)] lg:w-[381px] h-[349px] overflow-hidden rounded-sm">
                 <Image src={storyOverlay} alt="" fill className="object-cover" />
               </div>
+              {/* Person photo */}
               <div className="absolute left-1/2 -translate-x-1/2 lg:left-[104px] lg:translate-x-0 top-[53px] w-[227px] h-[226px] overflow-hidden">
                 <Image src={rafikImg} alt="Rafik Mohammad" fill className="object-cover object-top" />
               </div>
-              <div className="absolute left-[32px] bottom-[30px] w-[calc(100%-64px)] lg:w-[371px] bg-white rounded-[5px] p-4">
+              {/* Name card */}
+              <div className="absolute left-[32px] bottom-[20px] w-[calc(100%-64px)] lg:w-[371px] bg-white rounded-[5px] px-4 py-3 shadow-sm z-10">
                 <p className="text-[18px] font-bold text-accent capitalize tracking-[0.54px] leading-[1.41]">
                   Rafik Mohammad
                 </p>
-                <p className="text-[14px] text-[#333] capitalize tracking-[0.39px] leading-[1.41]">
+                <p className="text-[14px] text-[#333]">
                   NGO Partner
                 </p>
               </div>
