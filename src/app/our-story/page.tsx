@@ -11,8 +11,58 @@ const icon1 = "https://ey5228l95bqwogyb.public.blob.vercel-storage.com/Our%20Sto
 const icon2 = "https://ey5228l95bqwogyb.public.blob.vercel-storage.com/Our%20Story/2%20icon.png";
 const icon3 = "https://ey5228l95bqwogyb.public.blob.vercel-storage.com/Our%20Story/3%20icon.png";
 
+const timeline = [
+  {
+    year: "1980",
+    title: "The Roots",
+    points: [
+      "The cloth merchant business was a family legacy started by our great-grandfather, Seth Ishwar Das Ji.",
+    ],
+  },
+  {
+    year: "1988",
+    title: "The Turning Point",
+    points: [
+      "The new Navodaya School was established, but local families were hesitant to enroll their children.",
+      "To set an example for the village, my grandfather was requested to send his grandson—my eldest brother, Manoj.",
+      "This single, serendipitous event became the pivotal moment that changed our family's destiny.",
+    ],
+  },
+  {
+    year: "1995",
+    title: "The First Ripple - A Doctor in the Family",
+    points: [
+      "After finishing 12th grade at Navodaya, and with encouragement from his teachers, Manoj appeared for the Pre-Medical Test (PMT) without any formal coaching. He secured outstanding ranks: 115th in the All India Entrance and 4th in the PMT.",
+      "He secured a top rank and got admission to study M.B.B.S., sparking immense confidence and new aspirations within our family.",
+    ],
+  },
+  {
+    year: "1997",
+    title: "The Second Ripple - An Engineer is Forged",
+    points: [
+      "Dr. Manoj's achievements encouraged our family to send the second son, Pradeep, to Delhi for engineering entrance exam preparation.",
+      "He successfully gained admission into M.B.M. Engineering College, Jodhpur, Rajasthan",
+    ],
+  },
+  {
+    year: "1999",
+    title: "A Brother's Intervention",
+    points: [
+      "My father wanted me to take over the cloth merchant business after completing 10th and 12th grades. Their plan was that I would appear for the entrance exam—if I passed, I would pursue further studies; if not, I would return and manage the shop, as I was the only one left to do so. Fortunately, on my second attempt, I secured an impressive JEE rank of 136, improving significantly from my first attempt rank of 2693 and went on to join IIT Bombay in 2001.",
+    ],
+  },
+  {
+    year: "",
+    title: 'Our "Why"',
+    points: [
+      "In 1998, when my brother Dr Manoj Gupta became a doctor, it sparked great confidence in my Dadaji. Back in 1995, my father wanted him to join B.Sc. college at Lal Bahadur College, Kotputli, but my brother dreamed of becoming a doctor. If he had gone to B.Sc. college instead, I and my other brother might have remained in the same village.",
+      "His achievement sparked a chain reaction, boosting confidence within our family. The moment my brother, Manoj Gupta, became a doctor, it was as memorable and inspiring as India winning the 1983 World Cup, igniting a cricket frenzy, or Neeraj Chopra winning the gold medal.",
+    ],
+  },
+];
+
 export default function OurStoryPage() {
-  const fadeRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const fadeRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -27,10 +77,7 @@ export default function OurStoryPage() {
       { threshold: 0.15 }
     );
 
-    fadeRefs.current.forEach((ref) => {
-      if (ref) observer.observe(ref);
-    });
-
+    if (fadeRef.current) observer.observe(fadeRef.current);
     return () => observer.disconnect();
   }, []);
 
@@ -38,155 +85,121 @@ export default function OurStoryPage() {
     <>
       <Header />
       <main className="flex-1 bg-[#fffbf8]">
-        {/* Title */}
-        <section className="pt-12 pb-10 px-[150px]">
-          <h1 className="text-[36px] font-bold text-primary text-center mb-4">
-            Our Story
-          </h1>
-          <p className="text-[24px] text-[#4f4f4f] text-center max-w-[1182px] mx-auto leading-[1.2]">
-            A journey rooted in personal experience, driven by the belief that education can transform lives — one village, one child at a time.
-          </p>
-        </section>
-
-        {/* The Beginning */}
-        <section className="px-[150px] pb-10">
-          <h2 className="text-[34px] font-bold text-primary mb-6">The Beginning</h2>
-          <p className="text-[18px] text-[#333] leading-[1.6] max-w-[1212px]">
-            Dexter Foundation is the brainchild of our Founder, Devendra Agrawal, who was born in a small village of Rajasthan, Hasampur, and discovered education as the single most important life-altering parameter in his life. The foundation is committed to enabling rural underprivileged kids to discover education opportunities and experience a huge impact resulting from it.
-          </p>
-        </section>
-
         {/* How Navodaya Made an Impact? */}
-        <section className="mx-[150px] mb-10 rounded-[10px] overflow-hidden relative min-h-[550px]">
-          {/* Background overlay */}
-          <div className="absolute inset-0">
-            <Image src={storyOverlay} alt="" fill className="object-cover" />
-          </div>
-          {/* Foreground image */}
-          <div className="absolute right-0 top-0 w-[500px] h-full">
-            <Image src={impactImg} alt="How Navodaya Made an Impact" fill className="object-cover object-right" />
-          </div>
-          {/* Content */}
-          <div className="relative z-10 p-12 max-w-[650px]">
-            <h2 className="text-[36px] font-bold text-white mb-8 leading-[1.3]">
-              How Navodaya Made an Impact?
-            </h2>
-            <p className="text-[18px] text-white/90 leading-[1.6] mb-8">
-              Jawahar Navodaya Vidyalayas are a system of central government schools for talented students predominantly from rural areas. They provide quality education, completely free of cost, including boarding, meals, and uniforms — giving every child an equal opportunity to excel regardless of their socio-economic background.
-            </p>
+        <section className="px-[150px] pt-12 pb-10">
+          <h1 className="text-[36px] font-bold text-primary text-center mb-10">
+            How Navodaya Made an Impact?
+          </h1>
 
-            {/* 3 Icons */}
-            <div className="flex gap-8 mt-6">
-              <div className="flex flex-col items-center text-center w-[160px]">
-                <div className="relative w-[60px] h-[60px] mb-3">
-                  <Image src={icon1} alt="" fill className="object-contain" />
-                </div>
-                <p className="text-[14px] text-white leading-[1.4]">
-                  Free quality education from Class 6 to 12
-                </p>
-              </div>
-              <div className="flex flex-col items-center text-center w-[160px]">
-                <div className="relative w-[60px] h-[60px] mb-3">
-                  <Image src={icon2} alt="" fill className="object-contain" />
-                </div>
-                <p className="text-[14px] text-white leading-[1.4]">
-                  Residential schooling with holistic development
-                </p>
-              </div>
-              <div className="flex flex-col items-center text-center w-[160px]">
-                <div className="relative w-[60px] h-[60px] mb-3">
-                  <Image src={icon3} alt="" fill className="object-contain" />
-                </div>
-                <p className="text-[14px] text-white leading-[1.4]">
-                  Exposure to sports, culture, and leadership
-                </p>
+          <div className="flex gap-10 items-start">
+            {/* Text left */}
+            <div className="flex-1 text-[18px] text-[#333] leading-[1.6] text-justify space-y-4">
+              <p>
+                Navodaya Vidyalaya played a pivotal role in transforming not just the future of one student, but the destiny of an entire family.
+              </p>
+              <p>
+                In Hasampur, a small village in Neem Ka Thana Tehsil of Sikar district, professional education was rare. Most families, including ours, were engaged in traditional occupations like running an ancestral cloth merchant business.
+              </p>
+              <p>
+                Higher studies like engineering or medicine were unheard of, due to lack of awareness, exposure, and financial constraints.
+              </p>
+              <p>
+                When Navodaya Vidyalaya started in <strong>1987</strong>, it was viewed with skepticism. There was little awareness, and parents were hesitant to send their children away. At the personal request of a respected senior from our village, my grandfather sent my elder brother, <strong>Dr. Manoj Gupta</strong>, to Navodaya, not driven by ambition, but to set an example for others.
+              </p>
+            </div>
+
+            {/* Image right with overlay */}
+            <div className="flex-shrink-0 w-[440px] h-[340px] relative rounded-[10px] overflow-hidden">
+              <Image src={storyOverlay} alt="" fill className="object-cover" />
+              <div className="absolute inset-0">
+                <Image src={impactImg} alt="How Navodaya Made an Impact" fill className="object-cover" />
               </div>
             </div>
           </div>
         </section>
+
+        {/* What started as a simple decision */}
+        <section className="px-[150px] pb-10">
+          <h2 className="text-[22px] font-bold text-[#333] mb-8 leading-[1.4]">
+            {`What started as a simple decision—to send one child to Navodaya as a role model—turned into something much bigger:`}
+          </h2>
+
+          <div className="flex gap-10">
+            <div className="flex items-start gap-4 flex-1">
+              <div className="w-[50px] h-[50px] flex-shrink-0 relative">
+                <Image src={icon1} alt="" fill className="object-contain" />
+              </div>
+              <p className="text-[16px] text-[#333] leading-[1.4]">
+                It sparked a chain reaction in our family
+              </p>
+            </div>
+            <div className="flex items-start gap-4 flex-1">
+              <div className="w-[50px] h-[50px] flex-shrink-0 relative">
+                <Image src={icon2} alt="" fill className="object-contain" />
+              </div>
+              <p className="text-[16px] text-[#333] leading-[1.4]">
+                It transformed our family&apos;s identity from traditional cloth merchants into a community of doctors, engineers, and other professionals.
+              </p>
+            </div>
+            <div className="flex items-start gap-4 flex-1">
+              <div className="w-[50px] h-[50px] flex-shrink-0 relative">
+                <Image src={icon3} alt="" fill className="object-contain" />
+              </div>
+              <p className="text-[16px] text-[#333] leading-[1.4]">
+                It might also inspire many others in our village and nearby communities to pursue careers as doctors and engineers.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Divider */}
+        <div className="mx-[150px] border-t border-[#ddd]" />
 
         {/* How it changed our family's journey? - with fade-in */}
         <section className="px-[150px] py-10">
           <div
-            ref={(el) => { fadeRefs.current[0] = el; }}
+            ref={fadeRef}
             className="opacity-0 translate-y-8 transition-all duration-700 ease-out"
           >
-            <h2 className="text-[36px] font-bold text-primary text-center mb-8">
-              How it changed our family&apos;s journey?
+            <h2 className="text-[36px] font-bold text-primary text-center mb-12">
+              How it changed our family&apos;s journey ?
             </h2>
           </div>
 
-          <div className="max-w-[1100px] mx-auto space-y-10">
-            {/* Dr. Manoj Gupta */}
-            <div
-              ref={(el) => { fadeRefs.current[1] = el; }}
-              className="opacity-0 translate-y-8 transition-all duration-700 ease-out delay-100"
-            >
-              <div className="bg-white rounded-[10px] shadow-[0px_2px_12px_0px_rgba(0,0,0,0.08)] p-8">
-                <h3 className="text-[22px] font-bold text-accent mb-1">Dr. Manoj Gupta</h3>
-                <p className="text-[14px] text-[#666] mb-4">Navodaya Batch of 1987 | Founder, Shri Shyam Hospital | M.S. (Orthopaedics)</p>
-                <p className="text-[18px] text-[#333] leading-[1.6]">
-                  {`Born in Hasampur, Manoj was part of the very first batch of Navodaya in 1987. With dedicated teachers who believed in him more than he believed in himself, he went on to become a doctor. Today, he runs his own hospital in Kotputli. His journey inspired his younger brothers — Pradeep and Devendra — to pursue engineering, creating a ripple effect that transformed the entire family.`}
-                </p>
-              </div>
-            </div>
+          {/* Timeline */}
+          <div className="max-w-[900px] mx-auto">
+            {timeline.map((item, i) => (
+              <div key={i} className="flex gap-0">
+                {/* Year */}
+                <div className="w-[120px] flex-shrink-0 text-right pr-6 pt-1">
+                  {item.year && (
+                    <p className="text-[40px] font-bold text-[#c4956a] italic leading-none">
+                      {item.year}
+                    </p>
+                  )}
+                </div>
 
-            {/* Devendra Agrawal */}
-            <div
-              ref={(el) => { fadeRefs.current[2] = el; }}
-              className="opacity-0 translate-y-8 transition-all duration-700 ease-out delay-200"
-            >
-              <div className="bg-white rounded-[10px] shadow-[0px_2px_12px_0px_rgba(0,0,0,0.08)] p-8">
-                <h3 className="text-[22px] font-bold text-accent mb-1">Devendra Agrawal</h3>
-                <p className="text-[14px] text-[#666] mb-4">IIT Bombay 2005 | Founder, Dexter Capital Advisors & Dexter Foundation</p>
-                <p className="text-[18px] text-[#333] leading-[1.6]">
-                  {`Inspired by his elder brother Dr. Manoj's success, Devendra pursued education with determination. He graduated from IIT Bombay and went on to build Dexter Capital, a leading investment banking firm. Recognizing how education changed his own life, he founded Dexter Foundation to give rural children the same opportunities that transformed his family's destiny.`}
-                </p>
-              </div>
-            </div>
+                {/* Dot + Line */}
+                <div className="flex flex-col items-center flex-shrink-0 w-[20px]">
+                  <div className="w-[14px] h-[14px] rounded-full bg-[#4A749E] border-2 border-[#4A749E] flex-shrink-0 mt-2" />
+                  {i < timeline.length - 1 && (
+                    <div className="w-[2px] flex-1 bg-[#4A749E] opacity-30" />
+                  )}
+                </div>
 
-            {/* Preeti Agrawal */}
-            <div
-              ref={(el) => { fadeRefs.current[3] = el; }}
-              className="opacity-0 translate-y-8 transition-all duration-700 ease-out delay-300"
-            >
-              <div className="bg-white rounded-[10px] shadow-[0px_2px_12px_0px_rgba(0,0,0,0.08)] p-8">
-                <h3 className="text-[22px] font-bold text-accent mb-1">Preeti Agrawal</h3>
-                <p className="text-[14px] text-[#666] mb-4">{`Navodaya 2003–2010 | B.Tech in Computer Science | Senior Software Engineer at Verizon`}</p>
-                <p className="text-[18px] text-[#333] leading-[1.6]">
-                  {`Preeti entered Navodaya as a shy girl full of dreams. Seven years later, she walked out with the confidence to win public speaking competitions. Today, as a software engineer at Verizon, she is living proof of Navodaya's life-changing impact. Through the Dexter Foundation, she now helps other talented students unlock their true potential.`}
-                </p>
+                {/* Content */}
+                <div className="flex-1 pl-6 pb-10">
+                  <h3 className="text-[18px] font-bold text-[#333] mb-2">{item.title}</h3>
+                  <ul className="list-disc pl-5 space-y-2">
+                    {item.points.map((point, j) => (
+                      <li key={j} className="text-[16px] text-[#333] leading-[1.5]">
+                        {point}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
-            </div>
-
-            {/* Prince Agrawal */}
-            <div
-              ref={(el) => { fadeRefs.current[4] = el; }}
-              className="opacity-0 translate-y-8 transition-all duration-700 ease-out delay-500"
-            >
-              <div className="bg-white rounded-[10px] shadow-[0px_2px_12px_0px_rgba(0,0,0,0.08)] p-8">
-                <h3 className="text-[22px] font-bold text-accent mb-1">Prince Agrawal</h3>
-                <p className="text-[14px] text-[#666] mb-4">IIT Delhi 1999 | Chief of Staff at FruBon (Dev Milk Foods Pvt. Ltd.)</p>
-                <p className="text-[18px] text-[#333] leading-[1.6]">
-                  {`For Prince, Navodaya was more than a school — it was a family. The disciplined environment, healthy competition, and exposure to India's diverse cultures helped him crack IIT JEE. Encouraged by Dr. Manoj's achievements, his family continued sending children for competitive exam preparation. Today, he works at a startup building India's dairy future.`}
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* The Mission Continues */}
-        <section className="px-[150px] py-10">
-          <div
-            ref={(el) => { fadeRefs.current[5] = el; }}
-            className="opacity-0 translate-y-8 transition-all duration-700 ease-out"
-          >
-            <div className="bg-[#4A749E] rounded-[10px] p-12 text-center">
-              <h2 className="text-[36px] font-bold text-white mb-6">The Mission Continues</h2>
-              <p className="text-[18px] text-white/90 leading-[1.6] max-w-[900px] mx-auto">
-                What began as one family&apos;s transformation has now become a movement. The Dexter Foundation is committed to training hundreds of rural students every year, preparing them for the Navodaya entrance exam and giving them the chance to rewrite their futures — just like Manoj, Devendra, Preeti, and Prince did.
-              </p>
-            </div>
+            ))}
           </div>
         </section>
       </main>
