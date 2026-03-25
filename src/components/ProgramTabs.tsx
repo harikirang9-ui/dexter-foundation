@@ -12,7 +12,17 @@ export default function ProgramTabs() {
   const [activeLocation, setActiveLocation] = useState("Hasampur, Neem ka Thana");
   const dropdownRef = useRef<HTMLDivElement>(null);
 
-  const tabs = [`Program Structure - ${selectedYear}`, "Trainers", "Participant Directory", "PTM"];
+  const tabs = [
+    { label: `Program Structure - ${selectedYear}`, sectionId: "program-structure" },
+    { label: "Trainers", sectionId: "trainers" },
+    { label: "Participant Directory", sectionId: "participant-directory" },
+    { label: "PTM", sectionId: "ptm" },
+  ];
+
+  function handleTabClick(tab: { label: string; sectionId: string }) {
+    setActiveTab(tab.label);
+    document.getElementById(tab.sectionId)?.scrollIntoView({ behavior: "smooth" });
+  }
 
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
@@ -70,15 +80,15 @@ export default function ProgramTabs() {
         <div className="flex justify-center gap-8 border-b-[3px] border-[#e8e8e8]">
           {tabs.map((tab) => (
             <button
-              key={tab}
-              onClick={() => setActiveTab(tab)}
+              key={tab.label}
+              onClick={() => handleTabClick(tab)}
               className={`pb-3 text-[18px] relative ${
-                activeTab === tab
+                activeTab === tab.label
                   ? "text-primary font-bold after:absolute after:bottom-0 after:left-0 after:w-full after:h-[3px] after:bg-primary"
                   : "text-[#5f6568]"
               }`}
             >
-              {tab}
+              {tab.label}
             </button>
           ))}
         </div>

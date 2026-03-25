@@ -26,7 +26,7 @@ export default function ParticipantDirectory() {
   );
 
   return (
-    <section className="bg-white py-12 px-[150px]">
+    <section id="participant-directory" className="bg-white py-12 px-[150px]">
       <h2 className="text-[36px] font-bold text-primary text-center mb-8">
         Participant Directory
       </h2>

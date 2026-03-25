@@ -12,7 +12,7 @@ const trainers = [
 
 export default function Trainers() {
   return (
-    <section className="bg-white py-12 px-[150px]">
+    <section id="trainers" className="bg-white py-12 px-[150px]">
       <h2 className="text-[36px] font-bold text-primary text-center mb-10">
         Trainers
       </h2>

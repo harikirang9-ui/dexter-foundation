@@ -50,7 +50,7 @@ function VideoCard({ videoId, title }: { videoId: string; title: string }) {
 
 export default function ParentEngagement() {
   return (
-    <section className="bg-[#fffbf8] py-12 px-[150px]">
+    <section id="ptm" className="bg-[#fffbf8] py-12 px-[150px]">
       <h2 className="text-[36px] font-bold text-primary text-center mb-2">
         Engaging Parents, Empowering Students
       </h2>

@@ -5,7 +5,7 @@ const heroImg =
 
 export default function HeroImage() {
   return (
-    <section className="px-[150px] mb-8">
+    <section id="program-structure" className="px-[150px] mb-8">
       <div className="relative w-full h-[468px] rounded-[20px] overflow-hidden">
         <Image
           src={heroImg}
