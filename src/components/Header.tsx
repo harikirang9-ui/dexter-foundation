@@ -36,7 +36,7 @@ export default function Header() {
         <Link href="#" className="text-[18px] text-black font-medium hover:text-primary">
           Our Story
         </Link>
-        <Link href="#" className="text-[18px] text-black font-medium hover:text-primary">
+        <Link href="/team" className="text-[18px] text-black font-medium hover:text-primary">
           Team
         </Link>
         <button className="flex items-center gap-1.5 text-[18px] text-black font-medium hover:text-primary">
