@@ -33,7 +33,7 @@ export default function Header() {
         <Image src={logoUrl} alt="Dexter Foundation" width={120} height={100} />
       </Link>
       <nav className="flex items-center gap-10">
-        <Link href="#" className="text-[18px] text-black font-medium hover:text-primary">
+        <Link href="/our-story" className="text-[18px] text-black font-medium hover:text-primary">
           Our Story
         </Link>
         <Link href="/team" className="text-[18px] text-black font-medium hover:text-primary">

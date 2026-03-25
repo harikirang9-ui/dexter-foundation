@@ -26,7 +26,7 @@ export default function Footer() {
           <div>
             <h4 className="text-[18px] font-semibold text-[#333] mb-2">Overview</h4>
             <div className="flex flex-col text-[18px] text-[#333] leading-[28px]">
-              <Link href="#" className="hover:text-primary">Our Story</Link>
+              <Link href="/our-story" className="hover:text-primary">Our Story</Link>
               <Link href="/team" className="hover:text-primary">Team</Link>
               <Link href="#" className="hover:text-primary">Our Programs</Link>
               <Link href="#" className="hover:text-primary">Success Stories</Link>
