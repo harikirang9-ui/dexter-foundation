@@ -17,16 +17,16 @@ export default function SelectedStudents({ students = [] }: SelectedStudentsProp
     <section className="py-12 px-[150px]">
       <div className="max-w-[836px] mx-auto relative rounded-[10px] border border-[#b1c8e0] bg-gradient-to-b from-[#f3f9ff] to-white overflow-hidden py-10 px-8">
         {/* Background pattern */}
-        <div className="absolute inset-0 opacity-20">
-          <Image src={bgPattern} alt="" fill className="object-cover" />
+        <div className="absolute inset-0">
+          <Image src={bgPattern} alt="" fill className="object-contain" />
         </div>
 
         {/* Confetti decorations */}
-        <div className="absolute -left-[80px] -top-[40px] w-[300px] h-[280px] rotate-[11deg] opacity-60">
-          <Image src={confetti} alt="" fill className="object-cover" />
+        <div className="absolute -left-[20px] -top-[10px] w-[180px] h-[168px] rotate-[11deg] opacity-60">
+          <Image src={confetti} alt="" fill className="object-contain" />
         </div>
-        <div className="absolute -right-[80px] -top-[40px] w-[300px] h-[280px] rotate-[18deg] opacity-60">
-          <Image src={confetti} alt="" fill className="object-cover" />
+        <div className="absolute -right-[20px] -top-[10px] w-[180px] h-[168px] rotate-[18deg] opacity-60">
+          <Image src={confetti} alt="" fill className="object-contain" />
         </div>
 
         <h3 className="text-[26px] font-bold text-primary text-center mb-10 relative z-10">
