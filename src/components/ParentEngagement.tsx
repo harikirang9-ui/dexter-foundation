@@ -58,7 +58,7 @@ export default function ParentEngagement() {
         Regular PTMs to track progress and build support
       </p>
 
-      <div className="flex gap-[42px]">
+      <div className="flex justify-center gap-[42px]">
         {videos.map((video, i) => (
           <VideoCard key={i} videoId={video.id} title={video.title} />
         ))}
