@@ -98,9 +98,9 @@ const coachingData: CoachingData = {
         { name: "Jay Shree Arya", dob: "12-Jul-2014" },
       ],
       selectedStudents: [
-        { name: "Ritesh Meena", image: "https://ey5228l95bqwogyb.public.blob.vercel-storage.com/Navodaya%20Coaching%202024/has_selected%201.png" },
-        { name: "Shagun Tanwar", image: "https://ey5228l95bqwogyb.public.blob.vercel-storage.com/Navodaya%20Coaching%202024/has_selected%202.png" },
-        { name: "Vihan Meena", image: "https://ey5228l95bqwogyb.public.blob.vercel-storage.com/Navodaya%20Coaching%202024/has_selected%203.png" },
+        { name: "Ritesh Meena", image: "https://ey5228l95bqwogyb.public.blob.vercel-storage.com/Navodaya%20Coaching%202024/Ritesh%20Meena.png" },
+        { name: "Shagun Tanwar", image: "https://ey5228l95bqwogyb.public.blob.vercel-storage.com/Navodaya%20Coaching%202024/Shagun%20Tanwar.png" },
+        { name: "Vihan Meena", image: "https://ey5228l95bqwogyb.public.blob.vercel-storage.com/Navodaya%20Coaching%202024/Vihan%20Meena.png" },
       ],
       ptmVideos: [
         { id: "dQw4w9WgXcQ", title: "PTM Event 1" },
