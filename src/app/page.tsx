@@ -20,7 +20,7 @@ export default function Home() {
       <Header />
       <main className="flex-1 bg-[#fffbf8]">
         {/* Hero Section */}
-        <section className="mx-[148px] mt-6 rounded-[12px] overflow-hidden relative h-[430px]">
+        <section className="mx-[148px] mt-6 mb-16 rounded-[12px] overflow-hidden relative h-[430px]">
           <Image src={heroImg} alt="Empowering Underprivileged Rural Students" fill className="object-cover" priority />
           <div className="absolute inset-0 flex flex-col justify-center pl-[59px]">
             <h1 className="text-[36px] font-bold text-white w-[511px] leading-normal">
@@ -44,7 +44,7 @@ export default function Home() {
         </section>
 
         {/* Our Vision */}
-        <section className="px-[146px] py-16">
+        <section className="px-[146px] pb-16">
           <h2 className="text-[34px] font-bold text-primary mb-6">Our Vision</h2>
           <p className="text-[36px] text-[#333] leading-[1.4] max-w-[1212px]">
             Dexter Foundation is the brain child of our Founder, Devendra Agrawal, who was born in a small village of Rajasthan, Hasampur and discovered education as the single most important life-altering parameter in his life. The foundation is committed to enable rural underprivileged kids to discover education opportunities and experience a huge impact resulting from it.
@@ -52,7 +52,7 @@ export default function Home() {
         </section>
 
         {/* Our Journey Stats */}
-        <section className="px-[146px] pb-12">
+        <section className="px-[146px] pb-16">
           <div className="flex items-center gap-16">
             <h2 className="text-[34px] font-bold text-primary">Our Journey</h2>
             <div className="flex items-center gap-0">
@@ -128,7 +128,7 @@ export default function Home() {
         </section>
 
         {/* No, not just a program! It's a community */}
-        <section className="mx-[148px] bg-white rounded-[10px] shadow-[0px_0px_15px_0px_rgba(0,0,0,0.15)] overflow-hidden relative my-10">
+        <section className="mx-[148px] bg-white rounded-[10px] shadow-[0px_0px_15px_0px_rgba(0,0,0,0.15)] overflow-hidden relative my-16">
           {/* Background community image */}
           <div className="absolute right-0 top-0 w-[500px] h-full">
             <Image src={communityImg} alt="" fill className="object-cover object-right" />
@@ -169,7 +169,7 @@ export default function Home() {
         <PeopleCarousel />
 
         {/* Partnering for Impact */}
-        <section className="px-[145px] py-10">
+        <section className="px-[145px] py-16">
           <p className="text-[24px] text-[#5d5d5d] text-center max-w-[1182px] mx-auto mb-2 leading-[1.2]">
             This initiative reflects our belief that access to <span className="font-bold text-[#272727]">quality education can transform lives</span> and that every child deserves the chance to dream big.
           </p>
