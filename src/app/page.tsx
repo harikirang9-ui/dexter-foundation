@@ -3,6 +3,7 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PeopleCarousel from "@/components/PeopleCarousel";
+import GetInvolvedModal from "@/components/GetInvolvedModal";
 
 const heroImg = "https://ey5228l95bqwogyb.public.blob.vercel-storage.com/homepage/Empowering%20Underpriviledged%20Rural%20Students.png";
 const navodayaImg = "https://ey5228l95bqwogyb.public.blob.vercel-storage.com/homepage/Navodaya%20Entrance%20Exam.png";
@@ -20,11 +21,11 @@ export default function Home() {
       <Header />
       <main className="flex-1 bg-[#fffbf8]">
         {/* Hero Section */}
-        <section className="mx-4 md:mx-10 lg:mx-[148px] mt-8 rounded-[12px] overflow-hidden relative h-[250px] md:h-[350px] lg:h-[430px]">
+        <section className="mx-4 md:mx-10 lg:mx-[148px] mt-8 rounded-[12px] overflow-hidden relative h-[200px] md:h-[280px] lg:h-[340px]">
           <Image src={heroImg} alt="Empowering Underprivileged Rural Students" fill className="object-cover" priority />
           <div className="absolute inset-0 flex flex-col justify-center pl-4 md:pl-[59px]">
             <h1 className="text-[22px] md:text-[28px] lg:text-[36px] font-bold text-white max-w-[511px] leading-normal">
-              Empowering Underpriviledged Rural Students
+              Empowering Underpriviledged<br />Rural Students
             </h1>
             <p className="text-[16px] md:text-[20px] lg:text-[26px] text-white mt-2">
               Changing Lives through Education
@@ -36,9 +37,7 @@ export default function Home() {
               >
                 View Initiatives
               </Link>
-              <button className="bg-white text-[#444] text-[18px] font-medium px-[36px] py-[13px] rounded-[5px]">
-                Get Involved
-              </button>
+              <GetInvolvedModal />
             </div>
           </div>
         </section>

@@ -131,17 +131,17 @@ export default function BarefootEnglishTrainingPage() {
           </h2>
           <div className="flex flex-col lg:flex-row rounded-[6px] overflow-hidden shadow-[0px_2px_12px_0px_rgba(0,0,0,0.1)] bg-white">
             {/* Left - photo with overlay bg and white name card */}
-            <div className="relative w-full lg:w-[435px] flex-shrink-0 min-h-[420px] lg:min-h-[450px]">
-              {/* Overlay bg */}
-              <div className="absolute left-[27px] top-[34px] w-[calc(100%-54px)] lg:w-[381px] h-[349px] overflow-hidden rounded-sm">
-                <Image src={storyOverlay} alt="" fill className="object-cover" />
+            <div className="relative w-full lg:w-[435px] flex-shrink-0 min-h-[300px] self-stretch">
+              {/* Overlay bg fills entire left panel */}
+              <div className="absolute inset-0 overflow-hidden">
+                <Image src={storyOverlay} alt="" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 435px" />
               </div>
-              {/* Person photo */}
-              <div className="absolute left-1/2 -translate-x-1/2 lg:left-[104px] lg:translate-x-0 top-[53px] w-[227px] h-[226px] overflow-hidden">
-                <Image src={rafikImg} alt="Rafik Mohammad" fill className="object-cover object-top" />
+              {/* Person photo fills full height */}
+              <div className="absolute inset-0">
+                <Image src={rafikImg} alt="Rafik Mohammad" fill className="object-cover object-top" sizes="(max-width: 1024px) 100vw, 435px" />
               </div>
               {/* Name card */}
-              <div className="absolute left-[32px] bottom-[20px] w-[calc(100%-64px)] lg:w-[371px] bg-white rounded-[5px] px-4 py-3 shadow-sm z-10">
+              <div className="absolute left-[20px] bottom-[20px] right-[20px] bg-white rounded-[5px] px-4 py-3 shadow-sm z-10">
                 <p className="text-[18px] font-bold text-accent capitalize tracking-[0.54px] leading-[1.41]">
                   Rafik Mohammad
                 </p>
@@ -151,7 +151,7 @@ export default function BarefootEnglishTrainingPage() {
               </div>
             </div>
             {/* Right - text */}
-            <div className="flex-1 p-10 text-[16px] text-[#333] leading-[1.7] space-y-4 flex flex-col justify-center">
+            <div className="flex-1 px-10 py-6 text-[16px] text-[#333] leading-[1.7] space-y-4 flex flex-col justify-center">
               <p>
                 Multibhashi has been an invaluable partner in our CSR project, aiding Bindi
                 International in training 250 children both online and offline. Their innovative
