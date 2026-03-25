@@ -173,7 +173,7 @@ export default function OurStoryPage() {
                 {/* Year */}
                 <div className="w-[120px] flex-shrink-0 text-right pr-6 pt-1">
                   {item.year && (
-                    <p className="text-[40px] font-bold text-[#c4956a] italic leading-none">
+                    <p className="text-[40px] font-bold text-[#8FAFCF] italic leading-none">
                       {item.year}
                     </p>
                   )}
