@@ -12,14 +12,6 @@ export default function Footer() {
           {/* Logo */}
           <div className="flex items-start gap-3">
             <Image src={logoUrl} alt="Dexter Foundation" width={87} height={72} />
-            <div className="leading-tight mt-1">
-              <p className="text-[#546673] text-[45px] font-bold leading-[1.1]" style={{ fontFamily: "'Yaldevi Colombo', sans-serif" }}>
-                Dexter
-              </p>
-              <p className="text-[#546673] text-[29px] leading-[1.1]" style={{ fontFamily: "'Yaldevi Colombo', sans-serif" }}>
-                Foundation
-              </p>
-            </div>
           </div>
 
           {/* Contact Us */}

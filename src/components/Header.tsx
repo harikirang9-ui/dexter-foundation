@@ -11,14 +11,6 @@ export default function Header() {
     <header className="flex items-center justify-between px-[150px] py-4 bg-white">
       <Link href="/" className="flex items-center gap-3">
         <Image src={logoUrl} alt="Dexter Foundation" width={60} height={50} />
-        <div className="leading-tight">
-          <p className="text-[#546673] text-[28px] font-bold leading-[1.1]" style={{ fontFamily: "'Yaldevi Colombo', sans-serif" }}>
-            Dexter
-          </p>
-          <p className="text-[#546673] text-[18px] leading-[1.1]" style={{ fontFamily: "'Yaldevi Colombo', sans-serif" }}>
-            Foundation
-          </p>
-        </div>
       </Link>
       <nav className="flex items-center gap-10">
         <Link href="#" className="text-[18px] text-black font-medium hover:text-primary">
