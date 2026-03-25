@@ -48,7 +48,7 @@ export default function PeopleCarousel() {
   const person = people[activeIndex];
 
   return (
-    <section className="py-16 px-[150px]">
+    <section className="py-10 px-[150px]">
       <h2 className="text-[36px] font-bold text-primary text-center mb-3">
         Our Journey, Our People
       </h2>
