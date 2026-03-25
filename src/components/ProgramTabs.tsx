@@ -1,19 +1,20 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import { useRouter } from "next/navigation";
 
 const years = [2023, 2024, 2025];
 const locations = ["Kotputli, Behror", "Bhatinda, Jodhpur", "Hasampur, Neem ka Thana", "Sojat, Pali"];
 
-export default function ProgramTabs() {
-  const [selectedYear, setSelectedYear] = useState(2024);
+export default function ProgramTabs({ year = 2024 }: { year?: number }) {
+  const router = useRouter();
   const [yearDropdownOpen, setYearDropdownOpen] = useState(false);
-  const [activeTab, setActiveTab] = useState(`Program Structure - ${2024}`);
+  const [activeTab, setActiveTab] = useState(`Program Structure - ${year}`);
   const [activeLocation, setActiveLocation] = useState("Hasampur, Neem ka Thana");
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   const tabs = [
-    { label: `Program Structure - ${selectedYear}`, sectionId: "program-structure" },
+    { label: `Program Structure - ${year}`, sectionId: "program-structure" },
     { label: "Trainers", sectionId: "trainers" },
     { label: "Participant Directory", sectionId: "participant-directory" },
     { label: "PTM", sectionId: "ptm" },
@@ -34,10 +35,9 @@ export default function ProgramTabs() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  function handleYearSelect(year: number) {
-    setSelectedYear(year);
-    setActiveTab(`Program Structure - ${year}`);
+  function handleYearSelect(selectedYear: number) {
     setYearDropdownOpen(false);
+    router.push(`/Navodaya-Coaching-${selectedYear}`);
   }
 
   return (
@@ -52,22 +52,22 @@ export default function ProgramTabs() {
             onClick={() => setYearDropdownOpen(!yearDropdownOpen)}
             className="flex items-center gap-2 border border-[#d6dadf] rounded-[5px] px-3 py-1.5 bg-white cursor-pointer"
           >
-            <span className="text-[16px] text-black">{selectedYear}</span>
+            <span className="text-[16px] text-black">{year}</span>
             <svg width="16" height="8" viewBox="0 0 16 8" fill="none" className={`transition-transform ${yearDropdownOpen ? "rotate-180" : ""}`}>
               <path d="M1 1L8 7L15 1" stroke="#333" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </button>
           {yearDropdownOpen && (
             <div className="absolute top-full left-0 mt-1 bg-white border border-[#d6dadf] rounded-[5px] shadow-md z-20 w-full">
-              {years.map((year) => (
+              {years.map((y) => (
                 <button
-                  key={year}
-                  onClick={() => handleYearSelect(year)}
+                  key={y}
+                  onClick={() => handleYearSelect(y)}
                   className={`block w-full text-left px-3 py-2 text-[16px] hover:bg-[#f3f9ff] cursor-pointer ${
-                    year === selectedYear ? "text-primary font-bold" : "text-black"
+                    y === year ? "text-primary font-bold" : "text-black"
                   }`}
                 >
-                  {year}
+                  {y}
                 </button>
               ))}
             </div>
