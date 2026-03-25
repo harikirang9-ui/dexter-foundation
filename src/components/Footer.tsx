@@ -37,9 +37,9 @@ export default function Footer() {
           <div>
             <h4 className="text-[18px] font-semibold text-[#333] mb-2">Other Delta Entities</h4>
             <div className="flex flex-col text-[18px] text-[#333] leading-[28px]">
-              <Link href="#" className="hover:text-primary">Dexter Capital Advisors</Link>
-              <Link href="#" className="hover:text-primary">Dexter Ventures</Link>
-              <Link href="#" className="hover:text-primary">Discover Ventures</Link>
+              <a href="https://www.dextercapital.in/" target="_blank" rel="noopener noreferrer" className="hover:text-primary">Dexter Capital Advisors</a>
+              <a href="https://www.dexter.ventures/" target="_blank" rel="noopener noreferrer" className="hover:text-primary">Dexter Ventures</a>
+              <a href="https://discoverventures.in/" target="_blank" rel="noopener noreferrer" className="hover:text-primary">Discover Ventures</a>
             </div>
           </div>
         </div>
