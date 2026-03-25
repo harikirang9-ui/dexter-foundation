@@ -58,8 +58,13 @@ export default function Header() {
         <div ref={dropdownRef} className="relative">
           <button
             onClick={() => {
-              setIsOpen((prev) => !prev);
-              if (isOpen) setShowSub(false);
+              if (isOpen) {
+                setIsOpen(false);
+                setShowSub(false);
+              } else {
+                setIsOpen(true);
+                setShowSub(true);
+              }
             }}
             className="flex items-center gap-1.5 text-[18px] text-black font-medium hover:text-primary"
           >
