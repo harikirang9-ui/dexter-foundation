@@ -45,8 +45,8 @@ export default function Home() {
 
         {/* Our Vision */}
         <section className="px-4 md:px-10 lg:px-[146px] pt-10 pb-10">
-          <h2 className="text-[34px] font-bold text-primary mb-6">Our Vision</h2>
-          <p className="text-[22px] md:text-[28px] lg:text-[36px] text-[#333] leading-[1.4] max-w-[1212px]">
+          <h2 className="text-[36px] font-bold text-primary mb-6">Our Vision</h2>
+          <p className="text-[18px] md:text-[22px] lg:text-[24px] text-[#333] leading-[1.5] max-w-[1212px]">
             Dexter Foundation is the brain child of our Founder, Devendra Agrawal, who was born in a small village of Rajasthan, Hasampur and discovered education as the single most important life-altering parameter in his life. The foundation is committed to enable rural underprivileged kids to discover education opportunities and experience a huge impact resulting from it.
           </p>
         </section>
@@ -54,7 +54,7 @@ export default function Home() {
         {/* Our Journey Stats */}
         <section className="px-4 md:px-10 lg:px-[146px] pb-10">
           <div className="flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-16">
-            <h2 className="text-[34px] font-bold text-primary">Our Journey</h2>
+            <h2 className="text-[36px] font-bold text-primary">Our Journey</h2>
             <div className="flex flex-col md:flex-row items-start md:items-center gap-0">
               <div className="pr-12">
                 <p className="text-[42px] font-bold text-[#333]">350+</p>
@@ -74,7 +74,7 @@ export default function Home() {
 
         {/* Free Coaching */}
         <section className="relative py-10 bg-[#4A749E] overflow-hidden">
-          <h2 className="text-[34px] font-bold text-white text-center mb-10 relative z-10">
+          <h2 className="text-[36px] font-bold text-white text-center mb-10 relative z-10">
             Free Coaching
           </h2>
 

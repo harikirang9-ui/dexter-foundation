@@ -29,7 +29,7 @@ export default function SelectedStudents({ students = [] }: SelectedStudentsProp
           <Image src={confetti} alt="" fill className="object-contain" />
         </div>
 
-        <h3 className="text-[26px] font-bold text-primary text-center mb-10 relative z-10">
+        <h3 className="text-[24px] font-bold text-primary text-center mb-10 relative z-10">
           Selected Students
         </h3>
 

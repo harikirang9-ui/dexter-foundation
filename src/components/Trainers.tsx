@@ -24,7 +24,7 @@ export default function Trainers({ trainers = [] }: TrainersProps) {
                 className="object-cover"
               />
             </div>
-            <p className="text-[20px] font-semibold text-black text-center">
+            <p className="text-[18px] font-semibold text-black text-center">
               {trainer.name}
             </p>
           </div>

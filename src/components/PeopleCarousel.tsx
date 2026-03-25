@@ -81,7 +81,7 @@ export default function PeopleCarousel() {
               <p className="text-[18px] font-bold text-accent capitalize tracking-[0.54px] leading-[1.41]">
                 {person.name}
               </p>
-              <p className="text-[13px] text-[#333] capitalize tracking-[0.39px] leading-[1.41] whitespace-pre-line">
+              <p className="text-[14px] text-[#333] capitalize tracking-[0.39px] leading-[1.41] whitespace-pre-line">
                 {person.title}
               </p>
             </div>
