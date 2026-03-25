@@ -115,7 +115,7 @@ export default function Header() {
           )}
         </div>
 
-        <Link href="#" className="text-[18px] text-accent font-bold">
+        <Link href="/success-stories" className="text-[18px] text-accent font-bold">
           Success Stories
         </Link>
       </nav>

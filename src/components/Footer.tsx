@@ -29,7 +29,7 @@ export default function Footer() {
               <Link href="/our-story" className="hover:text-primary">Our Story</Link>
               <Link href="/team" className="hover:text-primary">Team</Link>
               <Link href="#" className="hover:text-primary">Our Programs</Link>
-              <Link href="#" className="hover:text-primary">Success Stories</Link>
+              <Link href="/success-stories" className="hover:text-primary">Success Stories</Link>
             </div>
           </div>
 
