@@ -144,7 +144,7 @@ export default function TeamPage() {
                 </p>
               </div>
             </div>
-            <div className="flex-shrink-0 relative w-[442px] h-auto min-h-[621px]">
+            <div className="flex-shrink-0 relative w-full lg:w-[442px] h-[300px] lg:h-auto lg:min-h-[621px]">
               <Image
                 src={mistakesImg}
                 alt="Our mistakes and learning"

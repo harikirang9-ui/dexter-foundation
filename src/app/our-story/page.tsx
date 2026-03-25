@@ -86,7 +86,7 @@ export default function OurStoryPage() {
       <Header />
       <main className="flex-1 bg-[#fffbf8]">
         {/* How Navodaya Made an Impact? */}
-        <section className="px-[150px] pt-12 pb-10">
+        <section className="px-4 md:px-10 lg:px-[150px] pt-12 pb-10">
           <h1 className="text-[36px] font-bold text-primary text-center mb-10">
             How Navodaya Made an Impact?
           </h1>
