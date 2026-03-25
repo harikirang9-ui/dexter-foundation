@@ -129,20 +129,22 @@ export default function BarefootEnglishTrainingPage() {
           <h2 className="text-[36px] font-bold text-primary text-center mb-10">
             Testimonial by NGO Partner
           </h2>
-          <div className="flex flex-col lg:flex-row rounded-xl overflow-hidden shadow-md bg-white">
+          <div className="flex flex-col lg:flex-row rounded-[6px] overflow-hidden shadow-[0px_2px_12px_0px_rgba(0,0,0,0.1)] bg-white">
             {/* Left - photo with overlay bg and white name card */}
-            <div className="relative w-full lg:w-[350px] min-h-[350px] lg:min-h-0 flex-shrink-0">
-              <Image src={storyOverlay} alt="" fill className="object-cover" />
-              <div className="absolute inset-0 z-10 flex flex-col">
-                <div className="flex-1 flex items-center justify-center px-8 pt-8">
-                  <div className="relative w-[250px] h-[280px]">
-                    <Image src={rafikImg} alt="Rafik Mohammad" fill className="object-cover object-top" />
-                  </div>
-                </div>
-                <div className="bg-white mx-6 mb-6 rounded-[5px] px-4 py-3">
-                  <p className="text-[18px] font-bold text-accent leading-[1.4]">Rafik Mohammad</p>
-                  <p className="text-[14px] text-[#333]">NGO Partner</p>
-                </div>
+            <div className="relative w-full lg:w-[435px] flex-shrink-0 min-h-[350px] lg:min-h-[417px]">
+              <div className="absolute left-[27px] top-[34px] w-[calc(100%-54px)] lg:w-[381px] h-[349px] overflow-hidden">
+                <Image src={storyOverlay} alt="" fill className="object-cover" />
+              </div>
+              <div className="absolute left-1/2 -translate-x-1/2 lg:left-[104px] lg:translate-x-0 top-[53px] w-[227px] h-[226px] overflow-hidden">
+                <Image src={rafikImg} alt="Rafik Mohammad" fill className="object-cover object-top" />
+              </div>
+              <div className="absolute left-[32px] bottom-[30px] w-[calc(100%-64px)] lg:w-[371px] bg-white rounded-[5px] p-4">
+                <p className="text-[18px] font-bold text-accent capitalize tracking-[0.54px] leading-[1.41]">
+                  Rafik Mohammad
+                </p>
+                <p className="text-[14px] text-[#333] capitalize tracking-[0.39px] leading-[1.41]">
+                  NGO Partner
+                </p>
               </div>
             </div>
             {/* Right - text */}
