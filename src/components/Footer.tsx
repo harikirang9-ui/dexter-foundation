@@ -46,7 +46,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom bar */}
-      <div className="border-t border-[#dbd9d7] mx-4 md:mx-10 lg:mx-[150px]" />
+      <div className="border-t border-[#dbd9d7]" />
       <div className="text-center py-4">
         <p className="text-[16px] text-[#333]">
           © 2025 Dexter Foundation. All Rights Reserved.
