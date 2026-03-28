@@ -2,11 +2,18 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 const heroImg =
   "https://ey5228l95bqwogyb.public.blob.vercel-storage.com/Barefoot%20English%20Training/hero.png";
+
+const carouselImages = [
+  "https://ey5228l95bqwogyb.public.blob.vercel-storage.com/Barefoot%20English%20Training/hero.png",
+  "https://ey5228l95bqwogyb.public.blob.vercel-storage.com/Barefoot%20English%20Training/2_barefoot_1x.webp",
+  "https://ey5228l95bqwogyb.public.blob.vercel-storage.com/Barefoot%20English%20Training/3_barefoot_1x.webp",
+  "https://ey5228l95bqwogyb.public.blob.vercel-storage.com/Barefoot%20English%20Training/4_barefoot_1x.webp",
+];
+
 const storyOverlay =
   "https://ey5228l95bqwogyb.public.blob.vercel-storage.com/Our%20Story/story%20overlay.png";
 const rafikImg =
@@ -20,14 +27,13 @@ const stats = [
   { count: 59, state: "Assam" },
 ];
 
-const dummyVideoId = "dQw4w9WgXcQ";
 
-function VideoCard({ id }: { id: string }) {
+function VideoCard({ id, className = "" }: { id: string; className?: string }) {
   const [playing, setPlaying] = useState(false);
 
   if (playing) {
     return (
-      <div className="relative w-full max-w-[372px] h-[597px] rounded-lg overflow-hidden">
+      <div className={`relative w-full aspect-[9/16] rounded-lg overflow-hidden ${className}`}>
         <iframe
           src={`https://www.youtube.com/embed/${id}?autoplay=1`}
           allow="autoplay; encrypted-media"
@@ -41,7 +47,7 @@ function VideoCard({ id }: { id: string }) {
   return (
     <button
       onClick={() => setPlaying(true)}
-      className="relative w-full max-w-[372px] h-[597px] rounded-lg overflow-hidden group cursor-pointer"
+      className={`relative w-full aspect-[9/16] rounded-lg overflow-hidden group cursor-pointer ${className}`}
     >
       <Image
         src={`https://img.youtube.com/vi/${id}/hqdefault.jpg`}
@@ -61,26 +67,82 @@ function VideoCard({ id }: { id: string }) {
   );
 }
 
+const studentVideoIds = ["6Ob7p_vnQ4U", "6JQHgq0BKr4", "F1HD2Kvo59E"];
+
+function StudentTestimonialsCarousel() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const prev = () => setCurrentIndex((i) => (i === 0 ? studentVideoIds.length - 1 : i - 1));
+  const next = () => setCurrentIndex((i) => (i === studentVideoIds.length - 1 ? 0 : i + 1));
+
+  return (
+    <section className="px-4 md:px-10 lg:px-[150px] py-10">
+      <h2 className="text-[20px] md:text-[36px] font-bold text-primary text-center mb-10">
+        Testimonials from our students
+      </h2>
+
+      {/* Desktop: show all 3 */}
+      <div className="hidden md:grid md:grid-cols-3 gap-6 max-w-[1000px] mx-auto">
+        {studentVideoIds.map((id) => (
+          <VideoCard key={id} id={id} />
+        ))}
+      </div>
+
+      {/* Mobile: carousel with arrows */}
+      <div className="md:hidden flex items-center gap-3">
+        <button onClick={prev} className="flex-shrink-0 w-9 h-9 rounded-full bg-[#ff8030] flex items-center justify-center">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path d="M9 2L4 7L9 12" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </button>
+        <div className="flex-1 flex justify-center">
+          <VideoCard id={studentVideoIds[currentIndex]} />
+        </div>
+        <button onClick={next} className="flex-shrink-0 w-9 h-9 rounded-full bg-[#ff8030] flex items-center justify-center">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path d="M5 2L10 7L5 12" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </button>
+      </div>
+
+      {/* Dots */}
+      <div className="flex md:hidden justify-center gap-2 mt-4">
+        {studentVideoIds.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setCurrentIndex(i)}
+            className={`w-2.5 h-2.5 rounded-full transition-colors ${
+              i === currentIndex ? "bg-[#ff8030]" : "bg-gray-300"
+            }`}
+          />
+        ))}
+      </div>
+    </section>
+  );
+}
+
 export default function BarefootEnglishTrainingPage() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
   return (
     <>
-      <Header />
       <main className="flex-1 bg-[#fffbf8]">
         {/* Section 1: Title + Hero */}
         <section className="px-4 md:px-10 lg:px-[150px] pt-12 pb-10">
-          <h1 className="text-[36px] font-bold text-primary text-center mb-8">
+          <h1 className="text-[22px] md:text-[36px] font-bold text-primary text-center mb-8">
             Barefoot English Training
           </h1>
           <div className="relative w-full h-[250px] md:h-[350px] lg:h-[480px] rounded-lg overflow-hidden">
-            <Image src={heroImg} alt="Barefoot English Training" fill className="object-cover" />
+            <Image src={carouselImages[currentSlide]} alt="Barefoot English Training" fill className="object-cover" />
           </div>
           {/* Carousel dots */}
           <div className="flex justify-center gap-2 mt-4">
-            {[0, 1, 2, 3].map((i) => (
-              <div
+            {carouselImages.map((_, i) => (
+              <button
                 key={i}
-                className={`w-3 h-3 rounded-full ${
-                  i === 0 ? "bg-accent" : "bg-gray-300"
+                onClick={() => setCurrentSlide(i)}
+                className={`w-3 h-3 rounded-full cursor-pointer transition-colors ${
+                  i === currentSlide ? "bg-accent" : "bg-gray-300"
                 }`}
               />
             ))}
@@ -126,7 +188,7 @@ export default function BarefootEnglishTrainingPage() {
 
         {/* Section 4: Testimonial by NGO Partner */}
         <section className="px-4 md:px-10 lg:px-[150px] py-10">
-          <h2 className="text-[36px] font-bold text-primary text-center mb-10">
+          <h2 className="text-[22px] md:text-[36px] font-bold text-primary text-center mb-10">
             Testimonial by NGO Partner
           </h2>
           <div className="flex flex-col lg:flex-row rounded-[6px] overflow-hidden shadow-[0px_2px_12px_0px_rgba(0,0,0,0.1)] bg-white">
@@ -172,24 +234,15 @@ export default function BarefootEnglishTrainingPage() {
         </section>
 
         {/* Section 5: Testimonials from students */}
-        <section className="px-4 md:px-10 lg:px-[150px] py-10">
-          <h2 className="text-[36px] font-bold text-primary text-center mb-10">
-            Testimonials from our students
-          </h2>
-          <div className="flex flex-wrap justify-center gap-[42px]">
-            {[0, 1, 2].map((i) => (
-              <VideoCard key={i} id={dummyVideoId} />
-            ))}
-          </div>
-        </section>
+        <StudentTestimonialsCarousel />
 
-        {/* Section 6: Testimonials from Trainer */}
+        {/* Section 6: Testimonials from Class Teacher */}
         <section className="px-4 md:px-10 lg:px-[150px] py-10">
-          <h2 className="text-[36px] font-bold text-primary text-center mb-10">
-            Testimonials from Trainer
+          <h2 className="text-[22px] md:text-[36px] font-bold text-primary text-center mb-10">
+            Testimonials from Class Teacher
           </h2>
           <div className="flex justify-center">
-            <VideoCard id={dummyVideoId} />
+            <VideoCard id="wAjW2PahEs0" className="max-w-[300px]" />
           </div>
         </section>
       </main>

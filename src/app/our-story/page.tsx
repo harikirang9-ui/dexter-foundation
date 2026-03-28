@@ -2,7 +2,6 @@
 
 import { useEffect, useRef } from "react";
 import Image from "next/image";
-import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 const storyOverlay = "https://ey5228l95bqwogyb.public.blob.vercel-storage.com/Our%20Story/story%20overlay.png";
@@ -83,11 +82,10 @@ export default function OurStoryPage() {
 
   return (
     <>
-      <Header />
       <main className="flex-1 bg-[#fffbf8]">
         {/* How Navodaya Made an Impact? */}
-        <section className="px-4 md:px-10 lg:px-[150px] pt-12 pb-10">
-          <h1 className="text-[36px] font-bold text-primary text-center mb-10">
+        <section className="page-margin pt-12 pb-10">
+          <h1 className="text-[22px] md:text-[36px] font-bold text-primary text-center mb-10">
             How Navodaya Made an Impact?
           </h1>
 
@@ -119,7 +117,7 @@ export default function OurStoryPage() {
         </section>
 
         {/* What started as a simple decision */}
-        <section className="px-4 md:px-10 lg:px-[150px] pb-10">
+        <section className="page-margin pb-10">
           <h2 className="text-[22px] font-bold text-[#333] mb-8 leading-[1.4]">
             {`What started as a simple decision—to send one child to Navodaya as a role model—turned into something much bigger:`}
           </h2>
@@ -153,27 +151,27 @@ export default function OurStoryPage() {
         </section>
 
         {/* Divider */}
-        <div className="mx-4 md:mx-10 lg:mx-[150px] border-t border-[#ddd]" />
+        <div className="border-t border-[#ddd]" />
 
         {/* How it changed our family's journey? - with fade-in */}
-        <section className="px-4 md:px-10 lg:px-[150px] py-10">
+        <section className="page-margin py-10">
           <div
             ref={fadeRef}
             className="opacity-0 translate-y-8 transition-all duration-700 ease-out"
           >
-            <h2 className="text-[36px] font-bold text-primary text-center mb-12">
+            <h2 className="text-[22px] md:text-[36px] font-bold text-primary text-center mb-12">
               How it changed our family&apos;s journey ?
             </h2>
           </div>
 
-          {/* Timeline */}
-          <div className="max-w-[900px] mx-auto">
+          {/* Timeline - Desktop */}
+          <div className="hidden md:block">
             {timeline.map((item, i) => (
               <div key={i} className="flex gap-0">
                 {/* Year */}
-                <div className="w-[60px] lg:w-[120px] flex-shrink-0 text-right pr-3 lg:pr-6 pt-1">
+                <div className="w-[120px] flex-shrink-0 text-right pr-6 pt-1">
                   {item.year && (
-                    <p className="text-[24px] lg:text-[40px] font-bold text-[#8FAFCF] italic leading-none">
+                    <p className="text-[40px] font-bold text-[#8FAFCF] italic leading-none">
                       {item.year}
                     </p>
                   )}
@@ -193,6 +191,38 @@ export default function OurStoryPage() {
                   <ul className="list-disc pl-5 space-y-2">
                     {item.points.map((point, j) => (
                       <li key={j} className="text-[16px] text-[#333] leading-[1.5]">
+                        {point}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Timeline - Mobile */}
+          <div className="md:hidden">
+            {timeline.map((item, i) => (
+              <div key={i} className="flex gap-0">
+                {/* Dot + Line */}
+                <div className="flex flex-col items-center flex-shrink-0 w-[20px]">
+                  <div className="w-[12px] h-[12px] rounded-full bg-[#4A749E] flex-shrink-0 mt-3" />
+                  {i < timeline.length - 1 && (
+                    <div className="w-[2px] flex-1 bg-[#4A749E] opacity-30" />
+                  )}
+                </div>
+
+                {/* Year + Content */}
+                <div className="flex-1 pl-4 pb-8">
+                  {item.year && (
+                    <p className="text-[32px] font-bold text-[#8FAFCF] italic leading-none mb-2">
+                      {item.year}
+                    </p>
+                  )}
+                  <h3 className="text-[16px] font-bold text-[#333] mb-2">{item.title}</h3>
+                  <ul className="list-disc pl-5 space-y-2">
+                    {item.points.map((point, j) => (
+                      <li key={j} className="text-[14px] text-[#333] leading-[1.6]">
                         {point}
                       </li>
                     ))}
