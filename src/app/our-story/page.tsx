@@ -19,7 +19,7 @@ const timeline = [
     ],
   },
   {
-    year: "1988",
+    year: "1987",
     title: "The Turning Point",
     points: [
       "The new Navodaya School was established, but local families were hesitant to enroll their children.",

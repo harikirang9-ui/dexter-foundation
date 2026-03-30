@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from "react";
 import { useRouter } from "next/navigation";
 
 const years = [2024, 2025];
+const yearLabels: Record<number, string> = { 2024: "2024-2025", 2025: "2025-2026" };
 const locationsByYear: Record<number, string[]> = {
   2024: ["Kotputli, Behror", "Bhatinda, Jodhpur", "Hasampur, Neem ka Thana", "Sojat, Pali"],
   2025: ["Hasampur, Neem ka Thana"],
@@ -19,14 +20,14 @@ export default function ProgramTabs({ year = 2024, activeLocation, onLocationCha
   const router = useRouter();
   const [yearDropdownOpen, setYearDropdownOpen] = useState(false);
   const [locationDropdownOpen, setLocationDropdownOpen] = useState(false);
-  const [activeTab, setActiveTab] = useState(`Program Structure - ${year}`);
+  const [activeTab, setActiveTab] = useState(`Program Structure - ${yearLabels[year] ?? year}`);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const locationDropdownRef = useRef<HTMLDivElement>(null);
 
   const locations = locationsByYear[year] ?? locationsByYear[2024];
 
   const tabs = [
-    { label: `Program Structure - ${year}`, sectionId: "program-structure" },
+    { label: `Program Structure - ${yearLabels[year] ?? year}`, sectionId: "program-structure" },
     { label: "Trainers", sectionId: "trainers" },
     { label: "Participant Directory", sectionId: "participant-directory" },
     { label: "PTM", sectionId: "ptm" },
@@ -76,7 +77,7 @@ export default function ProgramTabs({ year = 2024, activeLocation, onLocationCha
               onClick={() => setYearDropdownOpen(!yearDropdownOpen)}
               className="flex items-center gap-2 border border-[#d6dadf] rounded-[5px] px-3 py-1.5 bg-white cursor-pointer"
             >
-              <span className="text-[16px] text-black">{year}</span>
+              <span className="text-[16px] text-black">{yearLabels[year] ?? year}</span>
               <svg width="16" height="8" viewBox="0 0 16 8" fill="none" className={`transition-transform ${yearDropdownOpen ? "rotate-180" : ""}`}>
                 <path d="M1 1L8 7L15 1" stroke="#333" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
@@ -91,7 +92,7 @@ export default function ProgramTabs({ year = 2024, activeLocation, onLocationCha
                       y === year ? "text-primary font-bold" : "text-black"
                     }`}
                   >
-                    {y}
+                    {yearLabels[y] ?? y}
                   </button>
                 ))}
               </div>

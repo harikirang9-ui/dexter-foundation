@@ -101,14 +101,14 @@ export default function Home() {
                     <h3 className="text-[22px] font-bold text-black mb-6">Navodaya Entrance Exam</h3>
                     <div className="space-y-4">
                       <div>
-                        <p className="text-[18px] font-bold text-[#333] leading-[1.4]">Currently, in 2026</p>
+                        <p className="text-[18px] font-bold text-[#333] leading-[1.4]">In 2025-2026</p>
                         <p className="text-[18px] text-[#333] leading-[1.4]">
-                          The foundation is currently training 23 students in partnership with Multibhashi. We provide offline classroom training for 3 hours each day, ensuring students have sufficient time to focus on each subject effectively.
+                          The foundation is currently training 22 students in partnership with Multibhashi. We provide offline classroom training for 3 hours each day, ensuring students have sufficient time to focus on each subject effectively.
                         </p>
                       </div>
                       <hr className="border-[#eee]" />
                       <div>
-                        <p className="text-[18px] font-bold text-[#333] leading-[1.4]">In the year 2025</p>
+                        <p className="text-[18px] font-bold text-[#333] leading-[1.4]">In 2024-2025</p>
                         <p className="text-[18px] text-[#333] leading-[1.4]">
                           The Dexter Foundation trained over 114 students across four locations. Through partnerships with IN-DEED Foundation and Multibhashi, 67 students were trained in Jodhpur and Sojat. Additionally, in collaboration with Multibhashi, 57 students received training in Kotputli and Hasampur.
                         </p>

@@ -76,7 +76,7 @@ export default function FreeCoachingTabs() {
                 </div>
                 <hr className="border-[#eee]" />
                 <div>
-                  <p className="text-[15px] font-bold text-[#333] leading-[1.4]">In 2025 year</p>
+                  <p className="text-[15px] font-bold text-[#333] leading-[1.4]">In 2024-2025</p>
                   <p className="text-[15px] text-[#333] leading-[1.5]">
                     The Dexter Foundation trained over 114 students across four locations. Through partnerships with IN-DEED Foundation and Multibhashi, 67 students were trained in Jodhpur and Sojat. Additionally, in collaboration with Multibhashi, 57 students received training in Kotputli and Hasampur.
                   </p>

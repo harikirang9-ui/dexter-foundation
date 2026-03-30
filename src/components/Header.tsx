@@ -120,14 +120,14 @@ export default function Header() {
 
                   {showSub && (
                     <div className="w-full py-1">
-                      {[2024, 2025].map((year) => (
+                      {[{ key: 2024, label: "2024-2025" }, { key: 2025, label: "2025-2026" }].map((year) => (
                         <Link
-                          key={year}
-                          href={`/Navodaya-Coaching-${year}`}
+                          key={year.key}
+                          href={`/Navodaya-Coaching-${year.key}`}
                           onClick={() => { setIsOpen(false); setShowSub(false); }}
                           className="block px-4 py-1.5 text-[16px] text-black hover:bg-gray-50"
                         >
-                          {year}
+                          {year.label}
                         </Link>
                       ))}
                     </div>
@@ -184,14 +184,14 @@ export default function Header() {
               {mobileShowSub && (
                 <div className="pl-4 pb-3 flex flex-col gap-1">
                   <p className="text-[14px] font-medium text-[#666] py-1">Navodaya Coaching</p>
-                  {[2024, 2025].map((year) => (
+                  {[{ key: 2024, label: "2024-2025" }, { key: 2025, label: "2025-2026" }].map((year) => (
                     <Link
-                      key={year}
-                      href={`/Navodaya-Coaching-${year}`}
+                      key={year.key}
+                      href={`/Navodaya-Coaching-${year.key}`}
                       onClick={() => { setMobileMenuOpen(false); setMobileShowSub(false); }}
                       className="text-[14px] text-black py-1.5 pl-4"
                     >
-                      {year}
+                      {year.label}
                     </Link>
                   ))}
                   <Link
