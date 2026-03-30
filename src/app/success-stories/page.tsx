@@ -1,6 +1,14 @@
+import type { Metadata } from "next";
 import Footer from "@/components/Footer";
 import TeacherVideos from "./TeacherVideos";
 import StudentVideos from "./StudentVideos";
+
+export const metadata: Metadata = {
+  title: "Success Stories",
+  description:
+    "Hear from students and teachers about how Dexter Foundation's free Navodaya coaching program transformed their learning, confidence, and futures.",
+  alternates: { canonical: "/success-stories" },
+};
 
 export default function SuccessStoriesPage() {
   return (

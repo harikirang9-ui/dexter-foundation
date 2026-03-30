@@ -1,5 +1,13 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Footer from "@/components/Footer";
+
+export const metadata: Metadata = {
+  title: "Our Team",
+  description:
+    "Meet the team behind Dexter Foundation — Devendra Agrawal, Anuradha Agarwal, and Sunita Agrawal — driving free education for rural students in Rajasthan.",
+  alternates: { canonical: "/team" },
+};
 
 const devendraImg = "https://ey5228l95bqwogyb.public.blob.vercel-storage.com/team/Devendra%20Agrawal.png";
 const anuradhaImg = "https://ey5228l95bqwogyb.public.blob.vercel-storage.com/team/Anuradha%20Agarwal.png";
