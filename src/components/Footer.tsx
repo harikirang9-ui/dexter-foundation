@@ -17,8 +17,9 @@ export default function Footer() {
           {/* Contact Us */}
           <div>
             <h4 className="text-[18px] font-semibold text-[#333] mb-2">Contact Us</h4>
-            <p className="text-[18px] text-[#333] leading-[28px] max-w-[222px]">
-              91 Springboard 512/10, Outer Ring Road, Mahadevpura, Bangalore
+            <p className="text-[18px] text-[#333] leading-[28px] max-w-[280px]">
+              91springboard 512/10 Outer Ring Road, Mahadevapura, Bengaluru Karnataka-560048.
+              <br />Landmark: Near More Mega Store
             </p>
           </div>
 
@@ -28,17 +29,18 @@ export default function Footer() {
             <div className="flex flex-col text-[18px] text-[#333] leading-[28px]">
               <Link href="/our-story" className="hover:text-primary">Our Story</Link>
               <Link href="/team" className="hover:text-primary">Team</Link>
-              <Link href="#" className="hover:text-primary">Our Programs</Link>
+              <Link href="/Navodaya-Coaching-2025" className="hover:text-primary">Our Programs</Link>
               <Link href="/success-stories" className="hover:text-primary">Success Stories</Link>
             </div>
           </div>
 
           {/* Other Delta Entities */}
           <div>
-            <h4 className="text-[18px] font-semibold text-[#333] mb-2">Other Delta Entities</h4>
+            <h4 className="text-[18px] font-semibold text-[#333] mb-2">Other Dexter Entities</h4>
             <div className="flex flex-col text-[18px] text-[#333] leading-[28px]">
               <a href="https://www.dextercapital.in/" target="_blank" rel="noopener noreferrer" className="hover:text-primary">Dexter Capital Advisors</a>
               <a href="https://www.dexter.ventures/" target="_blank" rel="noopener noreferrer" className="hover:text-primary">Dexter Ventures</a>
+              <a href="https://deltainvest.in/" target="_blank" rel="noopener noreferrer" className="hover:text-primary">Delta Advisors</a>
               <a href="https://discoverventures.in/" target="_blank" rel="noopener noreferrer" className="hover:text-primary">Discover Ventures</a>
             </div>
           </div>

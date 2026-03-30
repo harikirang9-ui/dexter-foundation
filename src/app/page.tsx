@@ -36,7 +36,7 @@ export default function Home() {
               </p>
               <div className="flex gap-3 md:gap-5 mt-6 md:mt-8">
                 <Link
-                  href="/Navodaya-Coaching-2024"
+                  href="/Navodaya-Coaching-2025"
                   className="bg-[#ff8030] text-white text-[14px] md:text-[18px] font-medium px-[16px] md:px-[25px] py-[10px] md:py-[12px] rounded-[5px] text-center"
                 >
                   View Initiatives
