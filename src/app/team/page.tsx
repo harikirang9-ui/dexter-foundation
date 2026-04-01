@@ -1,6 +1,13 @@
+import type { Metadata } from "next";
 import Image from "next/image";
-import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+
+export const metadata: Metadata = {
+  title: "Our Team",
+  description:
+    "Meet the team behind Dexter Foundation — Devendra Agrawal, Anuradha Agarwal, and Sunita Agrawal — driving free education for rural students in Rajasthan.",
+  alternates: { canonical: "/team" },
+};
 
 const devendraImg = "https://ey5228l95bqwogyb.public.blob.vercel-storage.com/team/Devendra%20Agrawal.png";
 const anuradhaImg = "https://ey5228l95bqwogyb.public.blob.vercel-storage.com/team/Anuradha%20Agarwal.png";
@@ -10,30 +17,29 @@ const mistakesImg = "https://ey5228l95bqwogyb.public.blob.vercel-storage.com/tea
 export default function TeamPage() {
   return (
     <>
-      <Header />
       <main className="flex-1 bg-[#fffbf8]">
         {/* Title */}
         <section className="pt-12 pb-8 px-4 md:px-10 lg:px-[150px]">
-          <h1 className="text-[36px] font-bold text-primary text-center mb-4">
+          <h1 className="text-[22px] md:text-[36px] font-bold text-primary text-center mb-4">
             Team
           </h1>
-          <p className="text-[24px] text-[#4f4f4f] text-center max-w-[1182px] mx-auto leading-[1.2]">
+          <p className="text-[16px] md:text-[24px] text-[#4f4f4f] text-center max-w-[1182px] mx-auto leading-[1.3]">
             With years of experience building Dexter Capital and guiding entrepreneurs, Devendra and Anuradha
             are committed to supporting the Navodaya community with mentorship, resources, and vision.
           </p>
         </section>
 
         {/* Devendra Agrawal - Image Left, Text Right */}
-        <section className="px-4 md:px-10 lg:px-[150px] py-10">
+        <section className="px-4 md:px-10 lg:px-[150px] py-4 md:py-10">
           <div className="flex flex-col lg:flex-row gap-12 items-start">
-            <div className="flex-shrink-0 relative w-full lg:w-[440px] h-[350px] lg:h-[485px]">
-              <div className="absolute bottom-0 left-0 w-full h-[300px] lg:h-[435px] bg-[#d8d8d8] rounded-sm" />
+            <div className="flex-shrink-0 relative w-full lg:w-[440px] h-[400px] lg:h-[485px]">
+              <div className="absolute bottom-0 left-0 w-full h-[320px] lg:h-[435px] bg-[#d8d8d8] rounded-sm" />
               <div className="absolute inset-0 overflow-hidden">
                 <Image
                   src={devendraImg}
                   alt="Devendra Agrawal"
                   fill
-                  className="object-cover object-top"
+                  className="object-contain object-bottom lg:object-cover lg:object-top"
                 />
               </div>
             </div>
@@ -57,9 +63,9 @@ export default function TeamPage() {
         </section>
 
         {/* Anuradha Agarwal - Text Left, Image Right */}
-        <section className="px-4 md:px-10 lg:px-[150px] py-10">
+        <section className="px-4 md:px-10 lg:px-[150px] py-4 md:py-10">
           <div className="flex flex-col lg:flex-row gap-12 items-start">
-            <div className="flex-1">
+            <div className="flex-1 order-2 lg:order-1">
               <h2 className="text-[24px] font-bold text-[#333] mb-1">
                 Anuradha Agarwal
               </h2>
@@ -75,14 +81,14 @@ export default function TeamPage() {
                 </p>
               </div>
             </div>
-            <div className="flex-shrink-0 relative w-full lg:w-[440px] h-[350px] lg:h-[481px]">
-              <div className="absolute bottom-0 left-0 w-full h-[300px] lg:h-[435px] bg-[#d8d8d8] rounded-sm" />
+            <div className="flex-shrink-0 relative w-full lg:w-[440px] h-[400px] lg:h-[481px] order-1 lg:order-2">
+              <div className="absolute bottom-0 left-0 w-full h-[320px] lg:h-[435px] bg-[#d8d8d8] rounded-sm" />
               <div className="absolute inset-0 overflow-hidden">
                 <Image
                   src={anuradhaImg}
                   alt="Anuradha Agarwal"
                   fill
-                  className="object-cover object-top"
+                  className="object-contain object-bottom lg:object-cover lg:object-top"
                 />
               </div>
             </div>
@@ -90,16 +96,16 @@ export default function TeamPage() {
         </section>
 
         {/* Sunita Agrawal - Image Left, Text Right */}
-        <section className="px-4 md:px-10 lg:px-[150px] py-10">
+        <section className="px-4 md:px-10 lg:px-[150px] py-4 md:py-10">
           <div className="flex flex-col lg:flex-row gap-12 items-start">
-            <div className="flex-shrink-0 relative w-full lg:w-[440px] h-[350px] lg:h-[489px]">
-              <div className="absolute bottom-0 left-0 w-full h-[300px] lg:h-[435px] bg-[#d8d8d8] rounded-sm" />
+            <div className="flex-shrink-0 relative w-full lg:w-[440px] h-[400px] lg:h-[489px]">
+              <div className="absolute bottom-0 left-0 w-full h-[320px] lg:h-[435px] bg-[#d8d8d8] rounded-sm" />
               <div className="absolute inset-0 overflow-hidden">
                 <Image
                   src={sunitaImg}
                   alt="Sunita Agrawal"
                   fill
-                  className="object-cover object-top"
+                  className="object-contain object-bottom lg:object-cover lg:object-top"
                 />
               </div>
             </div>
@@ -126,13 +132,13 @@ export default function TeamPage() {
         </section>
 
         {/* Our mistakes and learning */}
-        <section className="mx-4 md:mx-10 lg:mx-[150px] my-10 bg-[#4a749e] rounded-sm overflow-hidden">
+        <section className="page-margin my-10 bg-[#4a749e] rounded-sm overflow-hidden">
           <div className="flex flex-col lg:flex-row">
             <div className="flex-1 px-6 lg:px-12 py-12">
-              <h2 className="text-[36px] font-bold text-white mb-6 leading-[1.4]">
+              <h2 className="text-[22px] md:text-[36px] font-bold text-white mb-6 leading-[1.4]">
                 Our mistakes and learning
               </h2>
-              <div className="text-[18px] text-white leading-[1.4] text-justify space-y-4">
+              <div className="text-[16px] text-white leading-[1.4] text-justify space-y-4">
                 <p>
                   {`Running a program to prepare rural Class 5 students for the Navodaya entrance exam brought to light several important challenges and lessons. One of the biggest hurdles was the lack of awareness among both students and parents about the long-term importance of education. Convincing parents to support their childrens' preparation was not always easy, though a few deeply committed parents went to great lengths, even overcoming commuting difficulties, to ensure their children could attend regularly.`}
                 </p>

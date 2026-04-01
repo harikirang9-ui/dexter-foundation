@@ -1,13 +1,13 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
-import type { Video, PtmItem } from "@/data/coaching-data";
+import type { Video } from "@/data/coaching-data";
 
 function VideoCard({ videoId, title, orientation = "vertical" }: { videoId: string; title: string; orientation?: "horizontal" | "vertical" }) {
   const [playing, setPlaying] = useState(false);
   const thumbnail = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
   const isHorizontal = orientation === "horizontal";
+
   const aspectClass = isHorizontal ? "aspect-[16/9]" : "aspect-[9/16] max-w-[372px]";
 
   if (playing) {
@@ -34,6 +34,7 @@ function VideoCard({ videoId, title, orientation = "vertical" }: { videoId: stri
         alt={title}
         className="absolute inset-0 w-full h-full object-cover"
       />
+      {/* Play button overlay */}
       <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/30 transition-colors">
         <div className="w-[60px] h-[60px] md:w-[74px] md:h-[74px] rounded-full bg-white/90 flex items-center justify-center group-hover:scale-110 transition-transform">
           <svg width="28" height="32" viewBox="0 0 28 32" fill="none">
@@ -45,61 +46,29 @@ function VideoCard({ videoId, title, orientation = "vertical" }: { videoId: stri
   );
 }
 
-function ImageCard({ src, title }: { src: string; title: string }) {
-  return (
-    <div className="relative w-full max-w-[372px] aspect-[9/16] rounded-lg overflow-hidden">
-      <Image src={src} alt={title} fill className="object-cover" />
-    </div>
-  );
-}
-
-interface ParentEngagementProps {
+interface ClassVideosProps {
   videos?: Video[];
-  items?: PtmItem[];
 }
 
-export default function ParentEngagement({ videos = [], items }: ParentEngagementProps) {
-  const hasItems = items && items.length > 0;
-  const hasVideos = videos.length > 0;
-
-  if (!hasItems && !hasVideos) return null;
-
-  const isHorizontal = hasItems && items[0].orientation === "horizontal";
+export default function ClassVideos({ videos = [] }: ClassVideosProps) {
+  if (videos.length === 0) return null;
 
   return (
-    <section id="ptm" className="bg-[#fffbf8] py-12 px-4 md:px-10 lg:px-[150px]">
+    <section id="class-videos" className="bg-[#fffbf8] py-12 px-4 md:px-10 lg:px-[150px]">
       <h2 className="text-[20px] md:text-[36px] font-bold text-primary text-center mb-2">
-        Engaging Parents, Empowering Students
+        Class Videos
       </h2>
       <p className="text-[14px] md:text-[24px] text-muted text-center mb-8 md:mb-10">
-        Regular PTMs to track progress and build support
+        Watch our class sessions and learning activities
       </p>
 
-      {hasItems ? (
-        <div className={`grid gap-6 max-w-[1000px] mx-auto ${
-          isHorizontal
-            ? items.length <= 2
-              ? `grid-cols-1 md:grid-cols-2 max-w-[700px]`
-              : "grid-cols-1 md:grid-cols-3"
-            : items.length <= 2
-              ? "grid-cols-2 max-w-[500px] justify-items-center"
-              : "grid-cols-2 md:grid-cols-3 justify-items-center"
-        }`}>
-          {items.map((item, i) =>
-            item.type === "video" && item.id ? (
-              <VideoCard key={i} videoId={item.id} title={item.title} orientation={item.orientation} />
-            ) : item.type === "image" && item.src ? (
-              <ImageCard key={i} src={item.src} title={item.title} />
-            ) : null
-          )}
-        </div>
-      ) : (
-        <div className="flex flex-col md:flex-row flex-wrap items-center justify-center gap-6 md:gap-[42px]">
-          {videos.map((video, i) => (
-            <VideoCard key={i} videoId={video.id} title={video.title} />
-          ))}
-        </div>
-      )}
+      <div className={`grid gap-6 md:gap-[42px] mx-auto ${
+        videos.length === 1 ? "grid-cols-1 max-w-[500px]" : "grid-cols-1 md:grid-cols-2 max-w-[1000px]"
+      }`}>
+        {videos.map((video, i) => (
+          <VideoCard key={i} videoId={video.id} title={video.title} orientation={video.orientation} />
+        ))}
+      </div>
     </section>
   );
 }
