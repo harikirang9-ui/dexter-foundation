@@ -45,6 +45,8 @@ export default function GetInvolvedModal() {
   const [message, setMessage] = useState("");
   const [codeDropdownOpen, setCodeDropdownOpen] = useState(false);
   const [codeSearch, setCodeSearch] = useState("");
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
   const [touched, setTouched] = useState<{ email?: boolean; phone?: boolean }>({});
   const codeDropdownRef = useRef<HTMLDivElement>(null);
   const codeSearchRef = useRef<HTMLInputElement>(null);
@@ -87,6 +89,8 @@ export default function GetInvolvedModal() {
   const handleClose = () => {
     setOpen(false);
     setSubmitted(false);
+    setSubmitting(false);
+    setSubmitError("");
     setFullName("");
     setEmail("");
     setCountryCode("+91");
@@ -187,11 +191,33 @@ export default function GetInvolvedModal() {
                 {/* Scrollable Form */}
                 <form
                   className="flex flex-col flex-1 min-h-0"
-                  onSubmit={(e) => {
+                  onSubmit={async (e) => {
                     e.preventDefault();
                     setTouched({ email: true, phone: true });
                     if (!isFormValid) return;
-                    setSubmitted(true);
+                    setSubmitting(true);
+                    setSubmitError("");
+                    try {
+                      const res = await fetch("/api/get-involved", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({
+                          fullName,
+                          email,
+                          countryCode,
+                          phoneNumber,
+                          contribution,
+                          howKnow,
+                          message,
+                        }),
+                      });
+                      if (!res.ok) throw new Error("Failed to submit");
+                      setSubmitted(true);
+                    } catch {
+                      setSubmitError("Something went wrong. Please try again.");
+                    } finally {
+                      setSubmitting(false);
+                    }
                   }}
                 >
                   <div className="flex-1 overflow-y-auto px-8 pt-4 pb-4 space-y-5">
@@ -355,21 +381,24 @@ export default function GetInvolvedModal() {
                   </div>
 
                   {/* Sticky bottom buttons */}
-                  <div className="flex justify-end items-center gap-6 px-8 py-4 border-t border-[#eee] flex-shrink-0 bg-white rounded-b-[12px]">
-                    <button
-                      type="button"
-                      onClick={handleClose}
-                      className="text-[16px] text-[#444] font-medium"
-                    >
-                      Cancel
-                    </button>
-                    <button
-                      type="submit"
-                      disabled={!isFormValid}
-                      className={`px-8 py-3 text-[16px] text-white font-medium rounded-[8px] transition-colors ${isFormValid ? "bg-[#ff8030] hover:bg-[#e66f20]" : "bg-[#ccc] cursor-not-allowed"}`}
-                    >
-                      Submit
-                    </button>
+                  <div className="flex flex-col gap-2 px-8 py-4 border-t border-[#eee] flex-shrink-0 bg-white rounded-b-[12px]">
+                    {submitError && <p className="text-[13px] text-red-500 text-center">{submitError}</p>}
+                    <div className="flex justify-end items-center gap-6">
+                      <button
+                        type="button"
+                        onClick={handleClose}
+                        className="text-[16px] text-[#444] font-medium"
+                      >
+                        Cancel
+                      </button>
+                      <button
+                        type="submit"
+                        disabled={!isFormValid || submitting}
+                        className={`px-8 py-3 text-[16px] text-white font-medium rounded-[8px] transition-colors ${isFormValid && !submitting ? "bg-[#ff8030] hover:bg-[#e66f20]" : "bg-[#ccc] cursor-not-allowed"}`}
+                      >
+                        {submitting ? "Submitting..." : "Submit"}
+                      </button>
+                    </div>
                   </div>
                 </form>
               </>
