@@ -1,6 +1,13 @@
-import sgMail from "@sendgrid/mail";
+import nodemailer from "nodemailer";
 
-sgMail.setApiKey(process.env.SENDGRID_API_KEY!);
+const transporter = nodemailer.createTransport({
+  host: "smtp.sendgrid.net",
+  port: 587,
+  auth: {
+    user: "apikey",
+    pass: process.env.SENDGRID_API_KEY!,
+  },
+});
 
 export async function POST(request: Request) {
   try {
@@ -28,16 +35,17 @@ export async function POST(request: Request) {
 
     const recipients = process.env.CONTACT_EMAILS!.split(",").map((e) => e.trim());
 
-    await sgMail.send({
-      to: recipients,
+    await transporter.sendMail({
       from: process.env.SENDGRID_FROM_EMAIL!,
+      to: recipients.join(", "),
       subject: `New Contribution Submission Received - ${fullName}`,
       html: htmlContent,
     });
 
     return Response.json({ success: true });
-  } catch (error) {
-    console.error("SendGrid error:", error);
-    return Response.json({ error: "Failed to send email" }, { status: 500 });
+  } catch (error: unknown) {
+    const errMsg = error instanceof Error ? error.message : String(error);
+    console.error("Email error:", errMsg);
+    return Response.json({ error: errMsg }, { status: 500 });
   }
 }

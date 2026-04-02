@@ -211,10 +211,14 @@ export default function GetInvolvedModal() {
                           message,
                         }),
                       });
-                      if (!res.ok) throw new Error("Failed to submit");
+                      if (!res.ok) {
+                        const data = await res.json().catch(() => null);
+                        throw new Error(data?.error || "Failed to submit");
+                      }
                       setSubmitted(true);
-                    } catch {
-                      setSubmitError("Something went wrong. Please try again.");
+                    } catch (err: unknown) {
+                      const msg = err instanceof Error ? err.message : "Something went wrong.";
+                      setSubmitError(msg);
                     } finally {
                       setSubmitting(false);
                     }
