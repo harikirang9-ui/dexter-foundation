@@ -68,6 +68,12 @@ export default function RootLayout({
   return (
     <html lang="en" className="antialiased">
       <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap"
+          rel="stylesheet"
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -76,7 +82,7 @@ export default function RootLayout({
               "@type": "NGO",
               name: "Dexter Foundation",
               url: siteUrl,
-              logo: "https://ey5228l95bqwogyb.public.blob.vercel-storage.com/homepage/df_logo.png",
+              logo: "https://ey5228l95bqwogyb.public.blob.vercel-storage.com/Dexter%20Foundation%20logo.svg",
               description:
                 "Dexter Foundation provides free Navodaya entrance exam coaching to underprivileged rural students across Rajasthan, India.",
               foundingDate: "2023",

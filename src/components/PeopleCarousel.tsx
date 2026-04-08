@@ -51,7 +51,7 @@ export default function PeopleCarousel() {
   useEffect(() => {
     const timer = setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % people.length);
-    }, 5000);
+    }, 20000);
     return () => clearInterval(timer);
   }, []);
 
@@ -88,8 +88,8 @@ export default function PeopleCarousel() {
           </div>
 
           {/* Photo side - Desktop */}
-          <div className={`hidden lg:block w-[435px] flex-shrink-0 relative ${activeIndex === 0 ? 'min-h-[480px]' : 'min-h-[417px]'}`}>
-            <div className={`absolute left-[27px] top-[34px] overflow-hidden ${activeIndex === 0 ? 'right-[27px] bottom-[95px]' : 'w-[381px] h-[349px]'}`}>
+          <div className="hidden lg:block w-[435px] flex-shrink-0 relative min-h-[417px]">
+            <div className="absolute left-[27px] top-[34px] w-[381px] h-[349px] overflow-hidden">
               <Image
                 src={person.bgOverlay}
                 alt=""
@@ -105,7 +105,7 @@ export default function PeopleCarousel() {
                 className="object-cover object-top"
               />
             </div>
-            <div className={`absolute left-[40px] right-[40px] bg-white rounded-[5px] p-4 shadow-sm z-10 ${activeIndex === 0 ? 'top-[280px]' : 'bottom-[40px]'}`}>
+            <div className="absolute left-[40px] right-[40px] bg-white rounded-[5px] p-4 shadow-sm z-10 bottom-[40px]">
               <p className="text-[18px] font-bold text-accent capitalize tracking-[0.54px] leading-[1.41]">
                 {person.name}
               </p>
@@ -117,22 +117,34 @@ export default function PeopleCarousel() {
 
           {/* Story side */}
           <div className="flex-1 py-8 px-6 lg:pl-0 lg:pr-10">
-            {/* Mobile: truncate story with read more */}
+            {/* Mobile: truncate 1st card with read more, full story for others */}
             <div className="lg:hidden">
-              <p className="text-[14px] text-[#333] leading-[1.2] text-justify whitespace-pre-line line-clamp-6">
+              <p className={`text-[14px] text-[#333] leading-[1.2] text-justify whitespace-pre-line ${activeIndex === 0 ? 'line-clamp-6' : ''}`}>
                 {person.story}
               </p>
-              <button
-                onClick={() => setShowModal(true)}
-                className="text-accent font-medium text-[14px] mt-2"
-              >
-                Read more
-              </button>
+              {activeIndex === 0 && (
+                <button
+                  onClick={() => setShowModal(true)}
+                  className="text-accent font-medium text-[14px] mt-2"
+                >
+                  Read more
+                </button>
+              )}
             </div>
-            {/* Desktop: full story always */}
-            <p className="hidden lg:block text-[14px] text-[#333] leading-[1.2] text-justify whitespace-pre-line">
-              {person.story}
-            </p>
+            {/* Desktop: truncate 1st card, full story for others */}
+            <div className="hidden lg:block">
+              <p className={`text-[14px] text-[#333] leading-[1.2] text-justify whitespace-pre-line ${activeIndex === 0 ? 'line-clamp-[14]' : ''}`}>
+                {person.story}
+              </p>
+              {activeIndex === 0 && (
+                <button
+                  onClick={() => setShowModal(true)}
+                  className="text-accent font-medium text-[14px] mt-2"
+                >
+                  Read more
+                </button>
+              )}
+            </div>
           </div>
         </div>
       </div>

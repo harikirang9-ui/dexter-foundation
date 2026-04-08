@@ -7,13 +7,13 @@
   --color-accent: #e57c3a;
   --color-muted: #5d5d5d;
   --color-border: #dbd9d7;
-  --font-sans: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --font-sans: "Lato", "Segoe UI", Arial, sans-serif;
 }
 
 body {
   background: var(--color-background);
   color: var(--color-foreground);
-  font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Lato", "Segoe UI", Arial, sans-serif;
   line-height: 1.6;
 }
 

@@ -4,7 +4,7 @@ import { useState, useRef, useEffect, useMemo } from "react";
 import Image from "next/image";
 
 const logoUrl =
-  "https://ey5228l95bqwogyb.public.blob.vercel-storage.com/homepage/df_logo.png";
+  "https://ey5228l95bqwogyb.public.blob.vercel-storage.com/Dexter%20Foundation%20logo.svg";
 
 const countryCodes = [
   { code: "+91", flag: "\u{1F1EE}\u{1F1F3}", name: "India", digits: 10 },

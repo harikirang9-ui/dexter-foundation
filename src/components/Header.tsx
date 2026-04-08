@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const logoUrl =
-  "https://ey5228l95bqwogyb.public.blob.vercel-storage.com/homepage/df_logo.png";
+  "https://ey5228l95bqwogyb.public.blob.vercel-storage.com/Dexter%20Foundation%20logo.svg";
 
 export default function Header() {
   const headerRef = useRef<HTMLElement>(null);
@@ -67,21 +67,21 @@ export default function Header() {
             )}
           </button>
           <Link href="/" onClick={() => setMobileMenuOpen(false)}>
-            <Image src={logoUrl} alt="Dexter Foundation" width={100} height={80} />
+            <Image src={logoUrl} alt="Dexter Foundation" width={154} height={124} />
           </Link>
         </div>
 
         {/* Desktop: logo */}
         <Link href="/" className="hidden lg:flex items-center gap-3">
-          <Image src={logoUrl} alt="Dexter Foundation" width={120} height={100} />
+          <Image src={logoUrl} alt="Dexter Foundation" width={188} height={154} />
         </Link>
 
         {/* Desktop nav */}
         <nav className="hidden lg:flex items-center gap-10">
-          <Link href="/our-story" className="text-[18px] text-black font-medium hover:text-primary">
+          <Link href="/our-story" className="text-[16px] text-black font-medium hover:text-primary">
             Our Story
           </Link>
-          <Link href="/team" className="text-[18px] text-black font-medium hover:text-primary">
+          <Link href="/team" className="text-[16px] text-black font-medium hover:text-primary">
             Team
           </Link>
 
@@ -97,7 +97,7 @@ export default function Header() {
                   setShowSub(false);
                 }
               }}
-              className="flex items-center gap-1.5 text-[18px] text-black font-medium hover:text-primary"
+              className="flex items-center gap-1.5 text-[16px] text-black font-medium hover:text-primary"
             >
               Our Programs
               <svg width="12" height="7" viewBox="0 0 12 7" fill="none">
@@ -145,7 +145,7 @@ export default function Header() {
             )}
           </div>
 
-          <Link href="/success-stories" className="text-[18px] text-black font-medium hover:text-primary">
+          <Link href="/success-stories" className="text-[16px] text-black font-medium hover:text-primary">
             Success Stories
           </Link>
         </nav>
